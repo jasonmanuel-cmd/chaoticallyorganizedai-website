@@ -16,7 +16,82 @@
     <meta name="description" content="Voice AI demonstrations for trades and home service businesses across the United States. See how AI handles emergency calls, appointment booking, and lead qualification 24/7 for HVAC, plumbing, electrical, and construction." />
     <link rel="stylesheet" href="style.css">
     <style>
-        .waveform { height: 4px; background: rgba(255,255,255,0.1); width: 100%; border-radius: 2px; margin-top: 15px; position: relative; }
+</style>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Chaotically Organized AI",
+    "image": "https://chaoticallyorganizedai.com/logo.png",
+    "@id": "https://chaoticallyorganizedai.com/#organization",
+    "url": "https://chaoticallyorganizedai.com",
+    "telephone": "+1-661-420-3456",
+    "email": "chaoticallyorganizedai@gmail.com",
+    "priceRange": "$$",
+    "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1712 19th St #216",
+        "addressLocality": "Bakersfield",
+        "addressRegion": "CA",
+        "postalCode": "93301",
+        "addressCountry": "US"
+    },
+    "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.3756,
+        "longitude": -119.0196
+    },
+    "areaServed": [
+        {"@type": "City", "name": "Bakersfield"},
+        {"@type": "City", "name": "Oildale"},
+        {"@type": "City", "name": "Rosedale"},
+        {"@type": "City", "name": "Shafter"},
+        {"@type": "City", "name": "Delano"},
+        {"@type": "City", "name": "Taft"},
+        {"@type": "City", "name": "Tehachapi"},
+        {"@type": "AdministrativeArea", "name": "Kern County"}
+    ],
+    "contactPoint": [
+        {
+            "@type": "ContactPoint",
+            "telephone": "+1-661-420-3456",
+            "contactType": "customer service",
+            "areaServed": "US",
+            "availableLanguage": "English"
+        },
+        {
+            "@type": "ContactPoint",
+            "telephone": "+1-863-801-0794",
+            "contactType": "direct mobile",
+            "availableLanguage": "English"
+        }
+    ],
+    "sameAs": [
+        "https://www.facebook.com/chaoticallyorganizedai",
+        "https://www.linkedin.com/company/chaoticallyorganizedai"
+    ],
+    "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "08:00",
+        "closes": "18:00"
+    },
+    "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "AI Services",
+        "itemListElement": [
+            {
+                "@type": "Offer",
+                "itemOffered": {
+                    "@type": "Service",
+                    "name": "24/7 AI Phone Answering for Trades",
+                    "description": "Zero-latency AI agents for HVAC, Plumbing, and Electrical businesses in Kern County."
+                }
+            }
+        ]
+    }
+}
+</script>
         .waveform::after { content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 40%; background: var(--neon-core); box-shadow: 0 0 10px var(--neon-core); }
         .play-btn { color: #000; background: var(--neon-core); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; cursor: pointer; }
 
@@ -44,7 +119,7 @@
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="voice-ai.html">Voice AI</a></li>
-                <li><a href="mctb.html">MCTB App</a></li>
+                <li><a href="mctb.html">Recent Work</a></li>
                 <li><a href="trades.html" class="active">Trades</a></li>
                 <li><a href="intake.html">Start Here</a></li>
                 <li><a href="contact.html">Contact</a></li>
@@ -106,10 +181,30 @@
     </section>
 
     <footer>
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2025 Chaotically Organized AI. Serving Bakersfield & Kern County.</p>
-        </div>
-    </footer>
+    <div class="container" style="text-align: center;">
+        <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+            CHAOTICALLY ORGANIZED AI
+        </p>
+
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+            <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
+            <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
+            <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
+        </p>
+
+        <p style="font-size: 0.9rem; color: #666;">
+            Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
+        </p>
+        <p style="margin-top: 15px;">
+            <a href="terms-of-service.html">Terms</a> | 
+            <a href="privacy-policy.html">Privacy</a> | 
+            <a href="contact.html">Contact</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Chaotically Organized AI. Proudly built in Bakersfield, CA.
+        </p>
+    </div>
+</footer>
     <script>
         document.querySelector('.menu-toggle').addEventListener('click', () => {
             document.querySelector('.nav-links').classList.toggle('active');

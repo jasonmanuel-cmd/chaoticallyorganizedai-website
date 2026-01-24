@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Latest Work — Recent Websites</title>
+    <title>Recent Work — Recent Websites</title>
     <meta name="description" content="Recent websites and case studies: screenshots and quick notes." />
     <link rel="stylesheet" href="style.css">
     <style>
@@ -15,6 +15,21 @@
       @media (max-width:600px){ .thumbs img { width: 48%; } }
       .note { font-size:0.95rem; color:var(--text-muted); }
     </style>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Chaotically Organized AI",
+      "url": "https://chaoticallyorganizedai.com",
+      "telephone": "+1-661-420-3456",
+      "email": "chaoticallyorganizedai@gmail.com",
+      "address": {"@type":"PostalAddress","streetAddress":"1712 19th St #216","addressLocality":"Bakersfield","addressRegion":"CA","postalCode":"93301","addressCountry":"US"},
+      "geo": {"@type":"GeoCoordinates","latitude":35.3756,"longitude":-119.0196},
+      "contactPoint": [{"@type":"ContactPoint","telephone":"+1-661-420-3456","contactType":"customer service"}],
+      "areaServed": ["Bakersfield","Kern County","California","United States"]
+    }
+    </script>
+
 </head>
 <body>
   <header>
@@ -22,7 +37,7 @@
       <a href="index.html" class="logo"><img src="logo.png" alt="logo" style="height:28px; vertical-align:middle;"> <span>CHAOTICALLY ORGANIZED AI</span></a>
       <ul class="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="mctb.html" class="active">Latest Work</a></li>
+        <li><a href="mctb.html" class="active">Recent Work</a></li>
         <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
@@ -30,11 +45,32 @@
 
   <main style="padding:40px 20px;">
     <section style="max-width:1200px; margin:0 auto;">
-      <h1 style="text-align:center;">Latest Work — Recent Websites</h1>
+      <h1 style="text-align:center;">Recent Work — Recent Websites</h1>
+      <div id="gallery-slideshow" class="slideshow" style="max-width:1000px;margin:18px auto 6px;">
+        <div class="slides">
+          <a href="#project-1"><img src="images/philly-cheesesteak-1.jpg" alt="Philly Cheesesteak"></a>
+          <a href="#project-2"><img src="images/credit-repair-1.jpg" alt="Credit Repair"></a>
+          <a href="#project-3"><img src="images/senior-housing-1.jpg" alt="Senior Housing"></a>
+          <a href="#project-4"><img src="images/hair-products-1.jpg" alt="Hair Products"></a>
+        </div>
+      </div>
+      <style>
+        #gallery-slideshow .slides a{display:none}
+        #gallery-slideshow .slides a.active{display:block}
+        #gallery-slideshow img{width:100%;height:360px;object-fit:cover;border-radius:6px}
+      </style>
+      <script>
+        (function(){const root=document.getElementById('gallery-slideshow');if(!root) return;const slides=Array.from(root.querySelectorAll('.slides a'));let i=0,interval=4000,tid;
+        function show(n){slides.forEach(s=>s.classList.remove('active'));slides[n].classList.add('active')}
+        function next(){i=(i+1)%slides.length;show(i)}
+        root.addEventListener('mouseenter',()=>clearInterval(tid));root.addEventListener('mouseleave',()=>tid=setInterval(next,interval));
+        show(0);tid=setInterval(next,interval);
+        })();
+      </script>
       <p style="text-align:center; max-width:800px; margin:8px auto 28px;" class="note">Below are four recent website projects (5 screenshots each). Add your images to the `images/` folder using the exact filenames listed below.</p>
 
       <div class="gallery">
-        <div class="project">
+        <div class="project" id="project-1">
           <h3>1) Philly Cheesesteak</h3>
           <div class="thumbs">
             <img src="images/philly-cheesesteak-1.jpg" alt="Philly Cheesesteak screenshot 1">
@@ -46,7 +82,7 @@
           <p style="margin-top:12px;"><a class="btn" href="https://phils-cheesesteaks-and-more.com/" target="_blank" rel="noopener">View live site</a></p>
         </div>
 
-        <div class="project">
+        <div class="project" id="project-2">
           <h3>2) Credit Repair</h3>
           <div class="thumbs">
             <img src="images/credit-repair-1.jpg" alt="Credit Repair screenshot 1">
@@ -56,7 +92,7 @@
           <p style="margin-top:12px;"><a class="btn" href="https://edwinwardconsulting.com" target="_blank" rel="noopener">View live site</a></p>
         </div>
 
-        <div class="project">
+        <div class="project" id="project-3">
           <h3>3) Senior Housing Finder</h3>
           <div class="thumbs">
             <img src="images/senior-housing-1.jpg" alt="Senior Housing screenshot 1">
@@ -68,7 +104,7 @@
           <p style="margin-top:12px;"><a class="btn" href="https://dffbseniorliving.com" target="_blank" rel="noopener">View live site</a></p>
         </div>
 
-        <div class="project">
+        <div class="project" id="project-4">
           <h3>4) Women's Hair Products Shop</h3>
           <div class="thumbs">
             <img src="images/hair-products-1.jpg" alt="Hair Products screenshot 1">
@@ -85,22 +121,35 @@
       </div>
 
       <section style="margin-top:28px; padding:18px; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid var(--glass-border); border-radius:8px;">
-        <h3>Image filenames to upload</h3>
-        <p class="note">Please name and upload the screenshots exactly as shown below into an `images/` folder at the site root.</p>
-        <ul>
-          <li><strong>Philly Cheesesteak:</strong> philly-cheesesteak-1.jpg … philly-cheesesteak-5.jpg</li>
-          <li><strong>Credit Repair:</strong> credit-repair-1.jpg … credit-repair-3.jpg</li>
-          <li><strong>Senior Housing:</strong> senior-housing-1.jpg … senior-housing-5.jpg</li>
-          <li><strong>Hair Products:</strong> hair-products-1.jpg … hair-products-8.jpg</li>
-        </ul>
-        <p class="note">Recommended: JPG or WebP, ~1200×800px (landscape) and under 300 KB for fast loading. If you want different filenames, tell me and I'll update the page.</p>
+        <h3>What We Do</h3>
+        <p class="note">We design fast, conversion-focused websites for local businesses and trades. Every site we build is responsive, SEO- and AI-ready, and optimized for performance and lead generation. Our work combines clean design, strong messaging, and technical best practices so your site not only looks great but converts visitors into customers.</p>
       </section>
     </section>
   </main>
 
-  <footer style="text-align:center; padding:30px 10px;">
-    <div class="container">
-      <p>&copy; 2026 Chaotically Organized AI</p>
+  <footer>
+    <div class="container" style="text-align: center;">
+        <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+            CHAOTICALLY ORGANIZED AI
+        </p>
+
+        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+            <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
+            <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
+            <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
+        </p>
+
+        <p style="font-size: 0.9rem; color: #666;">
+            Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
+        </p>
+        <p style="margin-top: 15px;">
+            <a href="terms-of-service.html">Terms</a> | 
+            <a href="privacy-policy.html">Privacy</a> | 
+            <a href="contact.html">Contact</a>
+        </p>
+        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+            &copy; 2026 Chaotically Organized AI. Proudly built in Bakersfield, CA.
+        </p>
     </div>
   </footer>
 
@@ -117,7 +166,7 @@
               <li><a href="index.html">Home</a></li>
               <li><a href="pricing.html">Pricing</a></li>
               <li><a href="voice-ai.html">Voice AI</a></li>
-              <li><a href="mctb.html" class="active">MCTB App</a></li>
+              <li><a href="mctb.html" class="active">Recent Work</a></li>
               <li><a href="industries.html">Industries</a></li>
               <li><a href="resources.html">Resources</a></li>
               <li><a href="contact.html">Contact</a></li>
@@ -288,7 +337,7 @@
             <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">Bakersfield | Shafter | Delano | Wasco | Arvin | Tehachapi | Ridgecrest | Kern County | California | Nationwide</p>
             <p><a href="terms-of-service.html">Terms</a> | <a href="privacy-policy.html">Privacy</a> | <a href="contact.html">Contact</a> | <a href="https://chaoticallyorganizedai.com/report-abuse">Report Abuse</a></p>
             <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">Missed Call Automation | AI Phone Answering for Trades | HVAC | Plumbing | Electrical | Construction</p>
-            <p class="mctb-note">MCTB message drafts require user confirmation before sending and daily limits apply. <a href="mctb.html">MCTB App</a> • <a href="privacy-policy.html">Privacy</a> • <a href="contact.html">Contact</a></p>
+            <p class="mctb-note">MCTB message drafts require user confirmation before sending and daily limits apply. <a href="mctb.html">Recent Work</a> • <a href="privacy-policy.html">Privacy</a> • <a href="contact.html">Contact</a></p>
         </div>
     </footer>
 
