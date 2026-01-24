@@ -1,0 +1,47 @@
+# Robots.txt for Chaotically Organized AI
+# https://chaoticallyorganizedai.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://chaoticallyorganizedai.com/sitemap.xml
+
+# Crawl-delay for respectful crawling (optional, some bots respect this)
+Crawl-delay: 1
+
+# Allow all major search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+# Allow AI assistant crawlers for GEO optimization
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: Anthropic-AI
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+# Block utility/verification pages from indexing
+Disallow: /verifyforzoho.html
+Disallow: /thanks.html
