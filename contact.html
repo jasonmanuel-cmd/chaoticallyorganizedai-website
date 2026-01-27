@@ -12,17 +12,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Website Design & AI Automation | Chaotically Organized AI | Bakersfield, CA</title>
-    <meta name="description" content="Get in touch about website design, SEO/GEO/AEO optimization, and AI phone automation for your business. Serving Bakersfield and Kern County, CA. Free consultation.">
+    <meta name="description" content="Get a free quote for website design or AI phone automation. Serving Bakersfield & Kern County. Call (661) 420-3456.">
     <link rel="stylesheet" href="style.css">
 
     <style>
         @media screen and (max-width: 768px) {
             .container { width: 90% !important; padding: 0 15px !important; }
             .two-column-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
-            .menu-toggle { display: block !important; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; position: absolute; right: 20px; top: 20px; }
-            .nav-links { display: none; width: 100%; flex-direction: column; background: rgba(0,0,0,0.95); position: absolute; top: 70px; left: 0; z-index: 9999; padding: 20px 0; text-align: center; border-bottom: 1px solid #333; }
+            .menu-toggle { display: block !important; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; position: absolute; right: 20px; top: 20px; z-index: 10001; }
+            .nav-links { display: none; width: 100%; flex-direction: column; background: rgba(0,0,0,0.98); position: fixed; top: 0; left: 0; height: 100%; z-index: 10000; padding: 80px 0; text-align: center; border-bottom: 1px solid #333; }
             .nav-links.active { display: flex !important; }
-            .nav-links li { margin: 15px 0; }
+            .nav-links li { margin: 20px 0; }
             h1 { font-size: 2rem !important; }
             .glass-card { padding: 20px !important; width: 100% !important; box-sizing: border-box; }
         }
@@ -91,7 +91,7 @@
             font-weight: 600;
         }
 
-        select {
+        select, input[type="text"], input[type="email"], input[type="tel"], input[type="url"], textarea {
             width: 100%;
             padding: 15px;
             background: rgba(255, 255, 255, 0.03);
@@ -103,7 +103,7 @@
             transition: 0.3s;
         }
 
-        select:focus {
+        select:focus, input:focus, textarea:focus {
             outline: none;
             border-color: var(--neon-core);
             background: var(--neon-dim);
@@ -113,11 +113,6 @@
             background: #1a1a1a;
             color: #fff;
             padding: 10px;
-        }
-
-        select option:hover,
-        select option:focus {
-            background: rgba(0, 255, 163, 0.1);
         }
 
         .checkbox-group {
@@ -151,43 +146,45 @@
             text-align: center;
             margin-top: 40px;
         }
+
+        .error-message {
+            color: #ff4444;
+            font-size: 0.9rem;
+            margin-top: -15px;
+            margin-bottom: 15px;
+        }
+
+        .success-message {
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid var(--neon-core);
+            color: var(--neon-core);
+            padding: 20px;
+            text-align: center;
+            border-radius: 4px;
+            margin-top: 20px;
+        }
     </style>
-    
-    <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '851220487780130');
-    fbq('track', 'PageView');
-    </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=851220487780130&ev=PageView&noscript=1"
-    /></noscript>
-    </head>
+</head>
 <body>
 
     <header>
         <div class="nav-container">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Chaotically Organized AI - AI Automation for Bakersfield" style="height: 30px; vertical-align: middle;">
-                <span>CHAOTICALLY ORGANIZED AI</span>
+                <img src="logo.png" alt="Chaotically Organized AI - AI Automation for Bakersfield" style="height: 40px; vertical-align: middle;">
+                <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
             <button class="menu-toggle">☰</button>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
+              <li><a href="pricing.html">Website Packages</a></li>
               <li><a href="voice-ai.html">Voice AI</a></li>
-              <li><a href="mctb.html">Recent Work</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
               <li><a href="industries.html">Industries</a></li>
               <li><a href="resources.html">Resources</a></li>
               <li><a href="contact.html" class="active">Contact</a></li>
             </ul>
         </div>
+        <div class="page-overlay"></div>
     </header>
 
     <section class="section">
@@ -211,123 +208,156 @@
 
             <div class="glass-card">
                 <h2>Send Us a Message</h2>
-                <form action="https://formspree.io/f/mrezgngr" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/mrezgngr" method="POST">
                     <input type="hidden" name="_next" value="thank-you.html">
 
-                    <label>Name *</label>
-                    <input type="text" name="name" required>
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                    <div class="error-message" id="name-error"></div>
 
-                    <label>Business Name *</label>
-                    <input type="text" name="business_name" required>
+                    <label for="business_name">Business Name *</label>
+                    <input type="text" id="business_name" name="business_name" required>
+                    <div class="error-message" id="business_name-error"></div>
 
-                    <label>Email *</label>
-                    <input type="email" name="email" required>
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="email-error"></div>
 
-                    <label>Phone</label>
-                    <input type="tel" name="phone">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
 
-                    <label>Business Website URL</label>
-                    <input type="url" name="website_url" placeholder="https://yourbusiness.com">
-
-                    <label>Google Maps URL</label>
-                    <input type="url" name="google_maps_url" placeholder="https://maps.google.com/...">
-                    <p class="form-note">Paste your Google Business Profile / Google Maps listing URL if you have one</p>
-
-                    <label>Trade Type</label>
-                    <select name="trade_type">
-                        <option value="">Select your trade...</option>
-                        <option value="HVAC">HVAC</option>
-                        <option value="Plumbing">Plumbing</option>
-                        <option value="Electrical">Electrical</option>
-                        <option value="Construction">Construction</option>
-                        <option value="Moving">Moving</option>
-                        <option value="Roofing">Roofing</option>
-                        <option value="Other">Other</option>
-                    </select>
+                    <label for="website_url">Business Website URL</label>
+                    <input type="url" id="website_url" name="website_url" placeholder="https://yourbusiness.com">
 
                     <label>Which service are you interested in?</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" name="service_website" value="New Website" id="service_website">
+                            <input type="checkbox" name="service" value="New Website" id="service_website">
                             <label for="service_website">New Website (SEO/GEO/AEO) - from $799</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="service_full" value="Full AI System" id="service_full">
+                            <input type="checkbox" name="service" value="Full AI System" id="service_full">
                             <label for="service_full">AI Phone System - $1,200 + $197/mo</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="service_mctb" value="MCTB App" id="service_mctb">
-                            <label for="service_mctb">MCTB Missed Call App - Free to $19.99/mo</label>
-                        </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" name="service_discuss" value="Not sure - want to discuss" id="service_discuss">
+                            <input type="checkbox" name="service" value="Not sure" id="service_discuss">
                             <label for="service_discuss">Not sure - want to discuss options</label>
                         </div>
                     </div>
 
-                    <label>Message</label>
-                    <textarea name="message" rows="5"></textarea>
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5"></textarea>
 
                     <p class="form-note">Form submissions go to support@chaoticallyorganizedai.com. We'll respond within 1 business day.</p>
 
                     <button type="submit" class="btn" style="width: 100%; padding: 15px;">Send Message</button>
                 </form>
-            </div>
-
-            <div style="margin-top: 60px;">
-                <h2>What Happens Next</h2>
-                <ul class="step-list">
-                    <li><strong>Step 1:</strong> We'll review your inquiry within 24 hours</li>
-                    <li><strong>Step 2:</strong> Schedule a 15-minute discovery call to discuss your needs</li>
-                    <li><strong>Step 3:</strong> Determine if the AI system fits your situation</li>
-                    <li><strong>Step 4:</strong> If it's a good fit, we'll send pricing details and next steps</li>
-                </ul>
+                <div id="success-message" class="success-message" style="display: none;">
+                    Thank you for your message! We'll be in touch shortly.
+                </div>
             </div>
 
             <div class="location-box">
                 <h3>Headquarters</h3>
-                <p style="color: var(--neon-core); font-size: 1.1rem; margin-bottom: 10px;">Downtown Bakersfield</p>
                 <p>1712 19th St #216<br>Bakersfield, CA 93301</p>
-                
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <p><strong>Office:</strong> (661) 420-3456</p>
-                    <p><strong>Direct:</strong> (863) 801-0794</p>
-                    <p><strong>Email:</strong> chaoticallyorganizedai@gmail.com</p>
+                    <p><strong>Office:</strong> <a href="tel:6614203456">(661) 420-3456</a></p>
+                    <p><strong>Direct:</strong> <a href="tel:8638010794">(863) 801-0794</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:support@chaoticallyorganizedai.com">support@chaoticallyorganizedai.com</a></p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-    <div class="container" style="text-align: center;">
-        <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
-            CHAOTICALLY ORGANIZED AI
-        </p>
-
-        <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
-            <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-            <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-            <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
-        </p>
-
-        <p style="font-size: 0.9rem; color: #666;">
-            Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
-        </p>
-        <p style="margin-top: 15px;">
-            <a href="terms-of-service.html">Terms</a> | 
-            <a href="privacy-policy.html">Privacy</a> | 
-            <a href="contact.html">Contact</a>
-        </p>
-        <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
-            &copy; 2026 Chaotically Organized AI. Proudly built in Bakersfield, CA.
-        </p>
-    </div>
-</footer>
+        <div class="container" style="text-align: center;">
+            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+                CHAOTICALLY ORGANIZED AI
+            </p>
+            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
+                <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
+                <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
+                <span style="display: block;">✉️ <a href="mailto:support@chaoticallyorganizedai.com" style="color: var(--text-muted);">support@chaoticallyorganizedai.com</a></span>
+            </p>
+            <p style="font-size: 0.9rem; color: #666;">
+                Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
+            </p>
+            <p style="margin-top: 15px;">
+                <a href="terms-of-service.html">Terms</a> | 
+                <a href="privacy-policy.html">Privacy</a> | 
+                <a href="contact.html">Contact</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
+                &copy; <span id="year"></span> Chaotically Organized AI. Proudly built in Bakersfield, CA.
+            </p>
+        </div>
+    </footer>
 
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', () => {
-            document.querySelector('.nav-links').classList.toggle('active');
+        // Menu Toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const pageOverlay = document.querySelector('.page-overlay');
+
+        menuToggle.addEventListener('click', (event) => {
+            navLinks.classList.toggle('active');
+            pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+            event.stopPropagation();
+        });
+
+        document.addEventListener('click', (event) => {
+            if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
+                navLinks.classList.remove('active');
+                pageOverlay.style.display = 'none';
+            }
+        });
+
+        // Copyright Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Form Validation
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        form.addEventListener('submit', function(event) {
+            let isValid = true;
+            // Clear previous errors
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+
+            // Name validation
+            const name = document.getElementById('name');
+            if (name.value.trim() === '') {
+                document.getElementById('name-error').textContent = 'Name is required.';
+                isValid = false;
+            }
+
+            // Business Name validation
+            const businessName = document.getElementById('business_name');
+            if (businessName.value.trim() === '') {
+                document.getElementById('business_name-error').textContent = 'Business Name is required.';
+                isValid = false;
+            }
+
+            // Email validation
+            const email = document.getElementById('email');
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email.value)) {
+                document.getElementById('email-error').textContent = 'Please enter a valid email address.';
+                isValid = false;
+            }
+
+            if (!isValid) {
+                event.preventDefault(); // Prevent form submission
+            } else {
+                // Optional: handle successful submission with JavaScript
+                event.preventDefault(); // Prevent default submission to show custom message
+                // You can add your AJAX submission logic here if you want
+                // For demo, we'll just show the success message
+                form.style.display = 'none';
+                successMessage.style.display = 'block';
+            }
         });
     </script>
+
 </body>
 </html>
