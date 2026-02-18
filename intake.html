@@ -1,12 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Bot Detection -->
+    <script>
+    (function() {
+        window.isBot = false;
+        // Check for headless browser indicators
+        if (navigator.webdriver) window.isBot = true;
+        if (navigator.plugins.length === 0) window.isBot = true;
+        if (navigator.languages.length === 0) window.isBot = true;
+        if (screen.width === 0 || screen.height === 0) window.isBot = true;
+        if (!window.chrome && navigator.userAgent.includes('Chrome')) window.isBot = true;
+        if (window.isBot) console.log('Bot detected - tracking disabled');
+    })();
+    </script>
+    
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', 'G-ZYCPQEBGTN');
+      if (!window.isBot) {
+          gtag('config', 'G-ZYCPQEBGTN');
+      }
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -292,6 +308,11 @@
                 <p class="subtitle">Step 2 of 2: Where should we send your audit?</p>
                 
                 <form id="step2Form" action="https://formspree.io/f/xvzbkovo" method="POST">
+                    <!-- Honeypot - bots fill this, humans don't -->
+                    <div style="position:absolute; left:-9999px; opacity:0;">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+                    </div>
+                    
                     <input type="hidden" name="form_type" value="revenue_audit">
                     <input type="hidden" name="trade" id="hiddenTrade">
                     <input type="hidden" name="challenge" id="hiddenChallenge">
@@ -387,6 +408,12 @@
         // Step 2 Submission
         document.getElementById('step2Form').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Honeypot check - if filled, it's a bot
+            if (document.querySelector('input[name="website"]').value !== '') {
+                console.log('Bot submission blocked');
+                return false;
+            }
             
             const btn = document.getElementById('submitBtn');
             btn.disabled = true;
