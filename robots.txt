@@ -1,47 +1,165 @@
-# Robots.txt for Chaotically Organized AI
-# https://chaoticallyorganizedai.com
+# robots.txt - Chaotically Organized AI
+# ======================================
+# https://chaoticallyorganizedai.com/robots.txt
 
+# Allow all crawlers access to main content
 User-agent: *
 Allow: /
+Allow: /index.html
+Allow: /voice-ai.html
+Allow: /industries.html
+Allow: /contact.html
+Allow: /pricing.html
 
-# Sitemap location
-Sitemap: https://chaoticallyorganizedai.com/sitemap.xml
+# Disallow utility/admin pages
+Disallow: /thank-you.html
+Disallow: /404.html
+Disallow: /verifyforzoho.html
+Disallow: /zohoverify/
+Disallow: /dashboard.html
 
-# Crawl-delay for respectful crawling (optional, some bots respect this)
+# Crawl-delay for respectful crawling
 Crawl-delay: 1
 
-# Allow all major search engine bots
+# ======================================
+# GOOGLE BOTS
+# ======================================
 User-agent: Googlebot
 Allow: /
+Crawl-delay: 0.5
 
+User-agent: Googlebot-Image
+Allow: /
+Allow: /images/
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+
+User-agent: Googlebot-Video
+Allow: /
+
+User-agent: Googlebot-Mobile
+Allow: /
+
+# ======================================
+# BING BOTS
+# ======================================
 User-agent: Bingbot
 Allow: /
+Crawl-delay: 0.5
 
-User-agent: Slurp
+User-agent: MSNBot
 Allow: /
 
-User-agent: DuckDuckBot
+User-agent: BingPreview
 Allow: /
 
-# Allow AI assistant crawlers for GEO optimization
+# ======================================
+# AI ASSISTANT CRAWLERS - ALLOW ALL FOR GEO
+# ======================================
+# OpenAI / ChatGPT
 User-agent: GPTBot
 Allow: /
+Disallow: /thank-you.html
 
 User-agent: ChatGPT-User
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic / Claude
 User-agent: Claude-Web
+Allow: /
+
+User-agent: Claude-User
 Allow: /
 
 User-agent: Anthropic-AI
 Allow: /
 
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Google AI (Gemini, Bard, etc.)
 User-agent: Google-Extended
 Allow: /
 
-# Block utility/verification pages from indexing
-Disallow: /verifyforzoho.html
-Disallow: /thanks.html
+User-agent: Gemini-User
+Allow: /
+
+# Microsoft Copilot
+User-agent: Copilot
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: DuckDuckGo-Favicons-Bot
+Allow: /
+
+# Apple
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+# Meta/Facebook
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+# Other AI crawlers
+User-agent: CCBot
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: Amazonbot
+Allow: /
+
+# ======================================
+# SEO TOOLS
+# ======================================
+User-agent: AhrefsBot
+Allow: /
+
+User-agent: AhrefsSiteAudit
+Allow: /
+
+User-agent: SemrushBot
+Allow: /
+
+User-agent: SemrushBot-SA
+Allow: /
+
+User-agent: MJ12bot
+Allow: /
+
+User-agent: DotBot
+Allow: /
+
+User-agent: Rogerbot
+Allow: /
+
+# ======================================
+# SITEMAP
+# ======================================
+Sitemap: https://chaoticallyorganizedai.com/sitemap.xml
+
+# ======================================
+# HOST
+# ======================================
+Host: https://chaoticallyorganizedai.com

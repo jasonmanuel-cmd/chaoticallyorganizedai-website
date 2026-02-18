@@ -5,7 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Website Design Case Studies | Bakersfield, CA</title>
     <meta name="description" content="Website design case studies for Bakersfield businesses. Real results: 40% conversion increase for local businesses.">
+    <link rel="canonical" href="https://chaoticallyorganizedai.com/portfolio.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chaoticallyorganizedai.com/portfolio.html" />
+    <meta property="og:title" content="Portfolio - Website Design Case Studies | Bakersfield, CA" />
+    <meta property="og:description" content="See real results from Bakersfield businesses we've helped with website design and AI automation." />
+    <meta property="og:image" content="https://chaoticallyorganizedai.com/logo.png" />
+    
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Website Design Portfolio - Bakersfield, CA",
+      "description": "Case studies of websites built for Bakersfield and Kern County businesses",
+      "url": "https://chaoticallyorganizedai.com/portfolio.html",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Chaotically Organized AI"
+      }
+    }
+    </script>
     <link rel="stylesheet" href="style.css">
+    <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
     <header>
@@ -17,8 +41,7 @@
             <button class="menu-toggle">☰</button>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="pricing.html">Website Packages</a></li>
-              <li><a href="voice-ai.html">Voice AI</a></li>
+              <li><a href="contact.html">Contact</a></li>
               <li><a href="portfolio.html" class="active">Portfolio</a></li>
               <li><a href="industries.html">Industries</a></li>
               <li><a href="resources.html">Resources</a></li>
@@ -38,28 +61,28 @@
                     <img src="images/philly-cheesesteak-1.jpg" alt="Phil's Cheesesteak Website">
                     <h3>Phil's Cheesesteak</h3>
                     <p>A local favorite that needed an online presence as vibrant as their sandwiches. We built a mobile-first website that showcases their menu and makes online ordering a breeze.</p>
-                    <a href="#" class="btn" disabled>Case Study Coming Soon</a>
+                    <a href="https://phils-cheesesteaks-and-more.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
                 </div>
 
                 <div class="case-study-card">
-                    <img src="images/credit-repair-1.jpg" alt="Credit Repair Co Website">
-                    <h3>Credit Repair Co</h3>
+                    <img src="images/credit-repair-1.jpg" alt="Edwin Ward Consulting Website">
+                    <h3>Edwin Ward Consulting</h3>
                     <p>This client required a professional and trustworthy site to attract new leads. We delivered a clean, secure website with a clear call-to-action, resulting in a 40% increase in conversions.</p>
-                    <a href="#" class="btn" disabled>Case Study Coming Soon</a>
+                    <a href="https://edwinwardconsulting.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
                 </div>
 
                 <div class="case-study-card">
-                    <img src="images/senior-housing-1.jpg" alt="Senior Housing Finder Website">
-                    <h3>Senior Housing Finder</h3>
+                    <img src="images/senior-housing-1.jpg" alt="DFFB Senior Living Website">
+                    <h3>DFFB Senior Living</h3>
                     <p>A compassionate service that needed a website to match. We created an accessible and easy-to-navigate site that helps families find the right housing for their loved ones.</p>
-                    <a href="#" class="btn" disabled>Case Study Coming Soon</a>
+                    <a href="https://dffbseniorliving.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
                 </div>
 
                 <div class="case-study-card">
-                    <img src="images/hair-products-1.jpg" alt="Women's Hair Products Website">
-                    <h3>Women's Hair Products</h3>
+                    <img src="images/hair-products-1.jpg" alt="Just For You by Katonya Website">
+                    <h3>Just For You by Katonya</h3>
                     <p>An e-commerce store with a beautiful product line that needed a beautiful online storefront. We designed a visually stunning website with a seamless shopping experience.</p>
-                    <a href="#" class="btn" disabled>Case Study Coming Soon</a>
+                    <a href="https://justforyoubykatonya.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
                 </div>
             </div>
         </div>
@@ -73,7 +96,7 @@
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
                 <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:support@chaoticallyorganizedai.com" style="color: var(--text-muted);">support@chaoticallyorganizedai.com</a></span>
+                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
             </p>
             <p style="font-size: 0.9rem; color: #666;">
                 Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
@@ -89,6 +112,27 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+    // Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const pageOverlay = document.querySelector('.page-overlay');
+
+    menuToggle.addEventListener('click', (event) => {
+        navLinks.classList.toggle('active');
+        pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', (event) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
+            navLinks.classList.remove('active');
+            pageOverlay.style.display = 'none';
+        }
+    });
+
+    // Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>

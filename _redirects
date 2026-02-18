@@ -1,0 +1,43 @@
+# Netlify Redirects & Rewrites for chaoticallyorganizedai.com
+# ================================================
+
+# FORCE HTTPS + WWW to NON-WWW
+http://chaoticallyorganizedai.com/*    https://chaoticallyorganizedai.com/:splat    301!
+http://www.chaoticallyorganizedai.com/*  https://chaoticallyorganizedai.com/:splat    301!
+https://www.chaoticallyorganizedai.com/* https://chaoticallyorganizedai.com/:splat    301!
+
+# TRAILING SLASH NORMALIZATION
+/contact/    /contact.html    301!
+/about/      /index.html      301!
+/services/   /pricing.html    301!
+/blog/       /resources.html  301!
+
+# COMMON TYPO REDIRECTS
+/bakersfield-web-design      /index.html    301!
+/web-design-bakersfield      /index.html    301!
+/ai-phone-system             /voice-ai.html 301!
+/ai-receptionist             /voice-ai.html 301!
+/phone-answering             /voice-ai.html 301!
+/free-audit                  /intake.html   301!
+/audit                       /intake.html   301!
+/quote                       /contact.html  301!
+/book                        /contact.html  301!
+
+# TRADE-SPECIFIC SHORT URLS
+/hvac     /hvac-phone-answering.html       301!
+/plumbing /plumbing-phone-answering.html   301!
+/electric /electrical-phone-answering.html 301!
+/roofing  /roofing-phone-answering.html    301!
+/moving   /moving-phone-answering.html     301!
+
+# CITY-SPECIFIC SHORT URLS
+/shafter  /website-design-shafter.html     301!
+/delano   /website-design-delano.html      301!
+/wasco    /website-design-wasco.html       301!
+
+# LEGACY / OLD URL REDIRECTS (if any existed)
+/old-contact.html    /contact.html    301!
+/old-services.html   /pricing.html    301!
+
+# CUSTOM 404 FALLBACK
+/*    /404.html    404

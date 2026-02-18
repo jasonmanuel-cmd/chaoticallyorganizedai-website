@@ -13,6 +13,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Website Design & AI Automation | Chaotically Organized AI | Bakersfield, CA</title>
     <meta name="description" content="Get a free quote for website design or AI phone automation. Serving Bakersfield & Kern County. Call (661) 420-3456.">
+    <link rel="canonical" href="https://chaoticallyorganizedai.com/contact.html">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chaoticallyorganizedai.com/contact.html" />
+    <meta property="og:title" content="Contact Us - Website Design & AI Automation | Chaotically Organized AI | Bakersfield, CA" />
+    <meta property="og:description" content="Get a free quote for website design or AI phone automation. Serving Bakersfield & Kern County. Call (661) 420-3456." />
+    <meta property="og:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:title" content="Contact Us - Website Design & AI Automation | Chaotically Organized AI | Bakersfield, CA" />
+    <meta property="twitter:description" content="Get a free quote for website design or AI phone automation. Serving Bakersfield & Kern County. Call (661) 420-3456." />
+    <meta property="twitter:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
+
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "ContactPage",
+            "name": "Contact Chaotically Organized AI",
+            "url": "https://chaoticallyorganizedai.com/contact.html",
+            "description": "Contact page for website design and AI automation in Bakersfield and Kern County.",
+            "publisher": {
+                "@type": "Organization",
+                "name": "Chaotically Organized AI",
+                "url": "https://chaoticallyorganizedai.com",
+                "telephone": "+1-661-420-3456",
+                "address": {
+                    "@type": "PostalAddress",
+                    "streetAddress": "1712 19th St #216",
+                    "addressLocality": "Bakersfield",
+                    "addressRegion": "CA",
+                    "postalCode": "93301",
+                    "addressCountry": "US"
+                }
+            }
+        }
+        </script>
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -176,8 +212,6 @@
             <button class="menu-toggle">☰</button>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="pricing.html">Website Packages</a></li>
-              <li><a href="voice-ai.html">Voice AI</a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
               <li><a href="industries.html">Industries</a></li>
               <li><a href="resources.html">Resources</a></li>
@@ -195,7 +229,7 @@
             <div class="two-column-grid">
                 <div class="contact-option">
                     <h3>Email</h3>
-                    <p><a href="mailto:support@chaoticallyorganizedai.com">support@chaoticallyorganizedai.com</a></p>
+                    <p><a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
                     <p class="form-note">We typically respond within 24 hours on business days</p>
                 </div>
 
@@ -208,8 +242,9 @@
 
             <div class="glass-card">
                 <h2>Send Us a Message</h2>
-                <form id="contact-form" action="https://formspree.io/f/mrezgngr" method="POST">
-                    <input type="hidden" name="_next" value="thank-you.html">
+                <form id="contact-form" action="https://formspree.io/f/xvzbkovo" method="POST" name="contact">
+                    <input type="hidden" name="_next" value="/thank-you.html">
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Chaotically Organized AI">
 
                     <label for="name">Name *</label>
                     <input type="text" id="name" name="name" required>
@@ -232,12 +267,20 @@
                     <label>Which service are you interested in?</label>
                     <div class="checkbox-group">
                         <div class="checkbox-item">
-                            <input type="checkbox" name="service" value="New Website" id="service_website">
-                            <label for="service_website">New Website (SEO/GEO/AEO) - from $799</label>
+                            <input type="checkbox" name="service" value="New Website with GEO/AEO" id="service_website">
+                            <label for="service_website">New Website with GEO & AEO</label>
                         </div>
                         <div class="checkbox-item">
-                            <input type="checkbox" name="service" value="Full AI System" id="service_full">
-                            <label for="service_full">AI Phone System - $1,200 + $197/mo</label>
+                            <input type="checkbox" name="service" value="AI Phone Answering" id="service_phone">
+                            <label for="service_phone">AI Phone Answering</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="service" value="AI Systems Audit" id="service_audit">
+                            <label for="service_audit">AI Systems Audit</label>
+                        </div>
+                        <div class="checkbox-item">
+                            <input type="checkbox" name="service" value="GEL Optimization" id="service_gel">
+                            <label for="service_gel">GEL Optimization</label>
                         </div>
                         <div class="checkbox-item">
                             <input type="checkbox" name="service" value="Not sure" id="service_discuss">
@@ -248,7 +291,7 @@
                     <label for="message">Message</label>
                     <textarea id="message" name="message" rows="5"></textarea>
 
-                    <p class="form-note">Form submissions go to support@chaoticallyorganizedai.com. We'll respond within 1 business day.</p>
+                    <p class="form-note">Form submissions go to chaoticallyorganizedai@gmail.com. We'll respond within 1 business day.</p>
 
                     <button type="submit" class="btn" style="width: 100%; padding: 15px;">Send Message</button>
                 </form>
@@ -261,9 +304,8 @@
                 <h3>Headquarters</h3>
                 <p>1712 19th St #216<br>Bakersfield, CA 93301</p>
                 <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1);">
-                    <p><strong>Office:</strong> <a href="tel:6614203456">(661) 420-3456</a></p>
-                    <p><strong>Direct:</strong> <a href="tel:8638010794">(863) 801-0794</a></p>
-                    <p><strong>Email:</strong> <a href="mailto:support@chaoticallyorganizedai.com">support@chaoticallyorganizedai.com</a></p>
+                    <p><strong>Phone:</strong> <a href="tel:6614203456">(661) 420-3456</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
                 </div>
             </div>
         </div>
@@ -277,7 +319,7 @@
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
                 <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:support@chaoticallyorganizedai.com" style="color: var(--text-muted);">support@chaoticallyorganizedai.com</a></span>
+                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
             </p>
             <p style="font-size: 0.9rem; color: #666;">
                 Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
@@ -347,15 +389,9 @@
             }
 
             if (!isValid) {
-                event.preventDefault(); // Prevent form submission
-            } else {
-                // Optional: handle successful submission with JavaScript
-                event.preventDefault(); // Prevent default submission to show custom message
-                // You can add your AJAX submission logic here if you want
-                // For demo, we'll just show the success message
-                form.style.display = 'none';
-                successMessage.style.display = 'block';
+                event.preventDefault(); // Prevent form submission if invalid
             }
+            // If valid, allow form to submit to Formspree
         });
     </script>
 

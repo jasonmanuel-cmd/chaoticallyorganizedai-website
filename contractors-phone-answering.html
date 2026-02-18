@@ -5,7 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Phone Answering for General Contractors | Bakersfield, CA</title>
     <meta name="description" content="24/7 AI phone answering for general contractors in Bakersfield. Qualifies high-value construction projects and captures leads for remodels, additions, and new builds.">
+    <link rel="canonical" href="https://chaoticallyorganizedai.com/contractors-phone-answering.html" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://chaoticallyorganizedai.com/contractors-phone-answering.html" />
+    <meta property="og:title" content="AI Phone Answering for General Contractors | Bakersfield, CA" />
+    <meta property="og:description" content="24/7 AI phone answering that qualifies high-value construction projects and captures leads for remodels, additions, and new builds." />
+    <meta property="og:image" content="https://chaoticallyorganizedai.com/logo.png" />
+    
+    <!-- Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "AI Phone Answering for General Contractors",
+      "description": "24/7 AI phone answering service for general contractors in Bakersfield and Kern County. Qualifies leads for remodels, additions, and new construction projects.",
+      "provider": {
+        "@type": "ProfessionalService",
+        "name": "Chaotically Organized AI",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1712 19th St #216",
+          "addressLocality": "Bakersfield",
+          "addressRegion": "CA",
+          "postalCode": "93301"
+        }
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": "Bakersfield",
+        "containedIn": {
+          "@type": "AdministrativeArea",
+          "name": "Kern County"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "description": "24/7 AI phone answering for contractors. Contact for pricing."
+      }
+    }
+    </script>
+    
     <link rel="stylesheet" href="style.css">
+    <meta name="twitter:card" content="summary_large_image" />
 </head>
 <body>
     <header>
@@ -17,7 +60,6 @@
             <button class="menu-toggle">☰</button>
             <ul class="nav-links">
               <li><a href="index.html">Home</a></li>
-              <li><a href="pricing.html">Website Packages</a></li>
               <li><a href="voice-ai.html">Voice AI</a></li>
               <li><a href="portfolio.html">Portfolio</a></li>
               <li><a href="industries.html" class="active">Industries</a></li>
@@ -53,7 +95,7 @@
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
                 <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:support@chaoticallyorganizedai.com" style="color: var(--text-muted);">support@chaoticallyorganizedai.com</a></span>
+                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
             </p>
             <p style="font-size: 0.9rem; color: #666;">
                 Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
@@ -69,6 +111,27 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script>
+    // Menu Toggle
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const pageOverlay = document.querySelector('.page-overlay');
+
+    menuToggle.addEventListener('click', (event) => {
+        navLinks.classList.toggle('active');
+        pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
+        event.stopPropagation();
+    });
+
+    document.addEventListener('click', (event) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
+            navLinks.classList.remove('active');
+            pageOverlay.style.display = 'none';
+        }
+    });
+
+    // Copyright Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
