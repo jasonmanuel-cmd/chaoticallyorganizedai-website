@@ -167,25 +167,70 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=851220487780130&ev=PageView&noscript=1"
 /></noscript>
     <meta name="twitter:card" content="summary_large_image" />
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-<header>
-<div class="nav-container">
-<a href="index.html" class="logo">
-<img src="logo.png" alt="Chaotically Organized AI - AI Automation for Bakersfield" style="height:30px;vertical-align:middle;">
-<span>CHAOTICALLY ORGANIZED AI</span>
-</a>
-<button class="menu-toggle">☰</button>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="voice-ai.html">Voice AI</a></li>
-<li><a href="portfolio.html">Recent Work</a></li>
-<li><a href="industries.html">Industries</a></li>
-<li><a href="resources.html">Resources</a></li>
-<li><a href="contact.html">Contact</a></li>
-</ul>
-</div>
-</header>
+        <header>
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
+                <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
+            </a>
+            <div class="nav-main">
+                <ul class="nav-links" role="menubar">
+                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
+                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
+                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">/</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+            </div>
+            <div id="google_translate_element"></div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+        </div>
+    </header>
 
 <section class="section">
 <div class="container">
@@ -323,5 +368,6 @@ document.querySelector('.menu-toggle').addEventListener('click', () => {
 document.querySelector('.nav-links').classList.toggle('active');
 });
 </script>
+<script src="script.js" defer></script>
 </body>
 </html>

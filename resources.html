@@ -1,162 +1,422 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZYCPQEBGTN');
-</script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZYCPQEBGTN');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Resources | GEO & AEO Optimization Guides | Bakersfield, CA</title>
-    <meta name="description" content="Free guides and resources for GEO (Generative Engine Optimization) and AEO (Answer Engine Optimization). Future-proof your business for AI search.">
+    <title>Resources & Tools | Chaotically Organized AI | Bakersfield, CA</title>
+    <meta name="description"
+        content="Free calculators, guides, and resources for service businesses. Calculate website ROI and download our complete systems guides. Call now: 661-610-9198">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chaoticallyorganizedai.com/resources.html" />
-    <meta property="og:title" content="Resources | GEO & AEO Optimization Guides" />
-    <meta property="og:description" content="Free guides for GEO and AEO optimization. Future-proof your business for AI search era." />
+    <meta property="og:title" content="Resources & Tools | Chaotically Organized AI" />
+    <meta property="og:description" content="Free calculators, guides, and resources for service businesses." />
     <meta property="og:image" content="https://chaoticallyorganizedai.com/logo.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:title" content="Resources | GEO & AEO Optimization Guides" />
-    <meta property="twitter:description" content="Guides and resources for AI search optimization. Future-proof your business." />
+    <meta property="twitter:title" content="Resources & Tools | Chaotically Organized AI" />
+    <meta property="twitter:description" content="Free calculators, guides, and resources for service businesses." />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://chaoticallyorganizedai.com/resources.html" />
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ItemList",
-      "name": "GEO & AEO Resources",
-      "description": "Guides and resources for Generative Engine Optimization and Answer Engine Optimization",
-      "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "AI Systems Audit",
-          "url": "https://chaoticallyorganizedai.com/systems-audit.html"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "GEO Consulting",
-          "url": "https://chaoticallyorganizedai.com/contact.html"
-        }
-      ]
-    }
-    </script>
-
     <style>
-        @media screen and (max-width: 768px) {
-            .container { width: 90% !important; padding: 0 15px !important; overflow-x: hidden; }
-            div[style*="grid-template-columns"], .grid-container { grid-template-columns: 1fr !important; gap: 30px !important; }
-            .menu-toggle { display: block !important; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; position: absolute; right: 20px; top: 20px; z-index: 10001; }
-            .nav-links { display: none; width: 100%; flex-direction: column; background: rgba(0,0,0,0.98); position: fixed; top: 0; left: 0; height: 100%; z-index: 10000; padding: 80px 0; text-align: center; border-bottom: 1px solid #333; }
-            .nav-links.active { display: flex !important; }
-            .nav-links li { margin: 20px 0; }
-            h1 { font-size: 2rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.5rem !important; }
-            h3 { font-size: 1.2rem !important; }
-            .glass-card { margin-bottom: 20px; width: 100% !important; box-sizing: border-box; padding: 20px !important; }
+        /* Floating Call Button */
+        .floating-call {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--neon-core);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(0, 255, 163, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        @media screen and (min-width: 769px) {
-            .menu-toggle { display: none !important; }
+
+        .floating-call:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 255, 163, 0.6);
+        }
+
+        @media (min-width: 769px) {
+            .floating-call {
+                display: none;
+            }
+        }
+
+        .gated-form {
+            background: var(--void-card);
+            border: 1px solid var(--neon-core);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 15px;
+            display: none;
+        }
+
+        .gated-form input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 4px;
+        }
+
+        .gated-form button {
+            width: 100%;
+            padding: 12px;
+            background: var(--neon-core);
+            color: #000;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 4px;
         }
 
         .resource-card {
             transition: all 0.3s ease;
+            background: var(--void-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
         }
+
         .resource-card:hover {
             border-color: var(--neon-core);
             transform: translateY(-5px);
             box-shadow: 0 10px 40px rgba(0, 255, 163, 0.15);
         }
-        .resource-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+
+        .calculator-box {
+            background: var(--void-card);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .calc-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 600px) {
+            .calc-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .calc-input {
+            width: 100%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #333;
+            color: #fff;
             border-radius: 4px;
-            margin-bottom: 15px;
         }
-        .tag-free {
-            background: rgba(0, 255, 163, 0.2);
-            color: var(--neon-core);
+
+        .calc-result-box {
+            background: rgba(0, 230, 118, 0.05);
             border: 1px solid var(--neon-core);
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
         }
-        .tag-paid {
-            background: rgba(255, 165, 0, 0.2);
-            color: #ffa500;
-            border: 1px solid #ffa500;
+    </style>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
         }
         body {
-            color: #B0B0B0;
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
         }
     </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="nav-container">
+        <header>
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Chaotically Organized AI" style="height: 40px; vertical-align: middle;">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="industries.html">Industries</a></li>
-              <li><a href="resources.html" class="active">Resources</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-main">
+                <ul class="nav-links" role="menubar">
+                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
+                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
+                    <li><a href="resources.html" class="active" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">/</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+            </div>
+            <div id="google_translate_element"></div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
         </div>
-        <div class="page-overlay"></div>
     </header>
 
     <section class="section" style="text-align: center; padding-top: 100px; padding-bottom: 40px;">
         <div class="container">
-            <h1>GEO & AEO Resources</h1>
-            <p style="max-width: 800px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.6; color: var(--text-muted);">
-                Guides and resources to help you understand why traditional SEO is dying and how to future-proof your business for AI search.
+            <h1>Free Resources & ROI Tools</h1>
+            <p
+                style="max-width: 800px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.6; color: var(--text-muted);">
+                Everything you need to stop leaking leads and start scaling your local business.
             </p>
         </div>
     </section>
 
-    <section class="section" style="padding-top: 20px;">
+    <!-- CALCULATOR SECTION -->
+    <section class="section">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+            <h2 style="text-align:center; margin-bottom:40px;">Interactive System & Website ROI Calculator</h2>
 
-                <div class="glass-card resource-card">
-                    <span class="resource-tag tag-paid">Service</span>
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">AI Systems Audit</h3>
-                    <p style="margin-bottom: 20px; line-height: 1.7;">
-                        A comprehensive audit of your current online visibility for AI assistants. Discover exactly why ChatGPT, Claude, and Perplexity aren't recommending your business.
-                    </p>
-                    <a href="systems-audit.html" class="btn btn-primary">Book Audit</a>
+            <div class="calculator-box" id="calcContainer">
+                <!-- Gated state: email required to use calculator -->
+                <div id="calcGate" style="text-align:center; padding:20px;">
+                    <div style="font-size:40px; margin-bottom:15px;">🔒</div>
+                    <h3>Unlock The Advanced ROI Calculator</h3>
+                    <p style="color:#888; margin-bottom:20px;">Enter your email to calculate your total missed revenue
+                        from both website leaks AND missed calls.</p>
+                    <form id="calcUnlockForm" onsubmit="unlockCalc(event)" style="max-width:400px; margin:0 auto;">
+                        <input type="hidden" name="form_type" value="roi_calculator_unlock">
+                        <input type="hidden" name="resource_requested" value="advanced_roi_calculator">
+                        <input type="email" id="calcEmail" name="email" placeholder="Your best email" required
+                            class="calc-input"
+                            style="margin-bottom:15px;">
+                        <button type="submit" class="btn btn-primary" style="width:100%;">Unlock Calculator Now</button>
+                    </form>
                 </div>
 
-                <div class="glass-card resource-card">
-                    <span class="resource-tag tag-free">Free Guide</span>
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">SEO vs GEO: The Complete Breakdown</h3>
-                    <p style="margin-bottom: 20px; line-height: 1.7;">
-                        Why traditional SEO is dying and how GEO (Generative Engine Optimization) is replacing it. What every business owner needs to know about AI search.
+                <!-- Calculator Body -->
+                <div id="calcBody" style="display:none;">
+                    <h3 style="margin-bottom:20px; color:var(--neon-core);">Your Metrics</h3>
+                    <div class="calc-row">
+                        <div>
+                            <label style="color:#888; margin-bottom:5px; display:block;">Monthly Website
+                                Visitors</label>
+                            <input type="number" id="webTraffic" class="calc-input" value="1000"
+                                oninput="runAdvancedCalc()">
+                        </div>
+                        <div>
+                            <label style="color:#888; margin-bottom:5px; display:block;">Current Website Coversion Rate
+                                (%)</label>
+                            <input type="number" id="webConv" class="calc-input" value="2" step="0.1"
+                                oninput="runAdvancedCalc()">
+                        </div>
+                    </div>
+
+                    <div class="calc-row">
+                        <div>
+                            <label style="color:#888; margin-bottom:5px; display:block;">Missed Calls Per Week</label>
+                            <input type="number" id="missedCalls" class="calc-input" value="10"
+                                oninput="runAdvancedCalc()">
+                        </div>
+                        <div>
+                            <label style="color:#888; margin-bottom:5px; display:block;">Average Job Value ($)</label>
+                            <input type="number" id="jobVal" class="calc-input" value="800" oninput="runAdvancedCalc()">
+                        </div>
+                    </div>
+
+                    <div class="calc-result-box" id="calcResultBox">
+                        <h4 style="margin-bottom:15px; color:#fff;">Potential Revenue Leaks Discovered:</h4>
+
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:#888;">
+                            <span>Lost Web Leads (from low conversion):</span>
+                            <strong style="color:#fff;" id="lostWebJobs">--</strong>
+                        </div>
+                        <div style="display:flex; justify-content:space-between; margin-bottom:10px; color:#888;">
+                            <span>Lost Call Leads (assuming 30% book rate):</span>
+                            <strong style="color:#fff;" id="lostCallJobs">--</strong>
+                        </div>
+                        <hr style="border-color:#333; margin:15px 0;">
+                        <div style="display:flex; justify-content:space-between; align-items:center;">
+                            <span style="font-size:1.1rem; color:#fff;">Total Revenue Lost Per Month:</span>
+                            <strong style="font-size:2rem; color:#ff4444;">$<span id="totalLostMRR">0</span></strong>
+                        </div>
+
+                        <a href="intake.html" class="btn btn-primary"
+                            style="margin-top:20px; width:100%; display:inline-block;">Plug These Leaks - Get Your
+                            System Audit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GUIDES SECTION -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Guides & Checklists</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
+
+                <div class="resource-card">
+                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">7 Revenue Leaks Costing Local Businesses
+                        $10K+/Month</h3>
+                    <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
+                        Our complete teardown of the hidden gaps in websites, CRMs, and phones that bleed cash.
                     </p>
-                    <a href="seo-vs-geo-guide.html" class="btn btn-primary">Read Guide</a>
+                    <button class="btn btn-primary" onclick="toggleGate('gate1')" style="width:100%;">Download
+                        Guide</button>
+                    <div class="gated-form" id="gate1">
+                        <form action="https://formspree.io/f/xvzbkovo" method="POST">
+                            <input type="hidden" name="resource_requested" value="7_revenue_leaks">
+                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <button type="submit">Send Me The PDF</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">The Complete Guide to AI Phone Answering
+                    </h3>
+                    <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
+                        How to deploy voice AI agents for trades and service businesses to book jobs 24/7.
+                    </p>
+                    <button class="btn btn-primary" onclick="toggleGate('gate2')" style="width:100%;">Download
+                        Guide</button>
+                    <div class="gated-form" id="gate2">
+                        <form action="https://formspree.io/f/xvzbkovo" method="POST">
+                            <input type="hidden" name="resource_requested" value="voice_ai_guide">
+                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <button type="submit">Send Me The PDF</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="resource-card" id="teardown">
+                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">Website Conversion Tear-Down</h3>
+                    <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
+                        Submit your URL and we'll send you a 5-10 minute video breakdown of your site's conversion
+                        leaks.
+                    </p>
+                    <button class="btn btn-primary" onclick="toggleGate('gate4')" style="width:100%;">Request
+                        Teardown</button>
+                    <div class="gated-form" id="gate4">
+                        <form action="https://formspree.io/f/xvzbkovo" method="POST">
+                            <input type="hidden" name="resource_requested" value="website_teardown">
+                            <input type="url" name="website_url" placeholder="Your Website URL" required>
+                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <button type="submit">Request My Video Audit</button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="resource-card">
+                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">SEO vs GEO vs AEO: Website Survival Guide
+                    </h3>
+                    <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
+                        Learn how to format your site architecture and content so LLMs (ChatGPT, Perplexity) recommend
+                        you.
+                    </p>
+                    <button class="btn btn-primary" onclick="toggleGate('gate3')" style="width:100%;">Download
+                        Guide</button>
+                    <div class="gated-form" id="gate3">
+                        <form action="https://formspree.io/f/xvzbkovo" method="POST">
+                            <input type="hidden" name="resource_requested" value="geo_aeo_guide">
+                            <input type="email" name="email" placeholder="Your Email Address" required>
+                            <button type="submit">Send Me The PDF</button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ARTICLES -->
+    <section class="section" style="padding-top: 20px;">
+        <div class="container">
+            <h2 style="text-align:center; margin-bottom:40px;">Deep Dive Articles</h2>
+            <div style="display: grid; grid-template-columns: 1fr; gap: 20px; max-width:800px; margin:0 auto;">
+
+                <div style="background:var(--void-card); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <a href="articles/ai-phone-answering-bakersfield-trades.html" style="text-decoration:none;">
+                        <h3 style="color:#fff; margin-bottom:10px;">The Complete Guide to AI-Powered Phone Answering for
+                            Local Trades in Kern County</h3>
+                        <p style="color:#888; font-size:14px;">Why traditional answering services fail trades and how AI
+                            fixes response times and emergency dispatch.</p>
+                    </a>
+                </div>
+
+                <div style="background:var(--void-card); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <a href="articles/bakersfield-website-conversion-secrets.html" style="text-decoration:none;">
+                        <h3 style="color:#fff; margin-bottom:10px;">What Makes a Local Business Website Actually Convert
+                            in Bakersfield?</h3>
+                        <p style="color:#888; font-size:14px;">A breakdown of hero sections, trust signals, and funnel
+                            steps needed to turn Kern County traffic into booked jobs.</p>
+                    </a>
+                </div>
+
+                <div style="background:var(--void-card); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <a href="articles/aeo-for-local-service-businesses.html" style="text-decoration:none;">
+                        <h3 style="color:#fff; margin-bottom:10px;">Answer Engine Optimization (AEO) for Local Service
+                            Businesses</h3>
+                        <p style="color:#888; font-size:14px;">How to structure your FAQ schema, service pages, and
+                            business data to show up in ChatGPT and Perplexity.</p>
+                    </a>
                 </div>
 
             </div>
@@ -170,45 +430,116 @@
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-                <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style-="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
-            </p>
-            <p style="font-size: 0.9rem; color: #666;">
-                Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
+                <span style="display: block;">📞 (661) 610-9198</span>
+                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com"
+                        style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
             </p>
             <p style="margin-top: 15px;">
-                <a href="terms-of-service.html">Terms</a> | 
-                <a href="privacy-policy.html">Privacy</a> | 
+                <a href="terms-of-service.html">Terms</a> |
+                <a href="privacy-policy.html">Privacy</a> |
                 <a href="contact.html">Contact</a>
             </p>
             <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
-                &copy; <span id="year"></span> Chaotically Organized AI. Proudly built in Bakersfield, CA.
+                &copy; <span id="year"></span> Chaotically Organized AI.
             </p>
         </div>
     </footer>
 
     <script>
-        // Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const pageOverlay = document.querySelector('.page-overlay');
+        function toggleGate(id) {
+            const el = document.getElementById(id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
 
-        menuToggle.addEventListener('click', (event) => {
-            navLinks.classList.toggle('active');
-            pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-            event.stopPropagation();
-        });
+        function showUnlockedCalculator() {
+            document.getElementById('calcGate').style.display = 'none';
+            document.getElementById('calcBody').style.display = 'block';
+            document.getElementById('calcResultBox').style.display = 'block';
+            runAdvancedCalc();
+        }
 
-        document.addEventListener('click', (event) => {
-            if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
-                navLinks.classList.remove('active');
-                pageOverlay.style.display = 'none';
+        async function unlockCalc(e) {
+            e.preventDefault();
+            const form = document.getElementById('calcUnlockForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            const originalLabel = submitBtn.textContent;
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Unlocking...';
+
+            const payload = new FormData(form);
+            payload.append('_subject', 'ROI Calculator Unlock');
+            payload.append('landing_page', window.location.pathname);
+            payload.append('page_url', window.location.href);
+
+            const params = new URLSearchParams(window.location.search);
+            const readStoredValue = (key) => {
+                try {
+                    return localStorage.getItem(key) || '';
+                } catch (error) {
+                    return '';
+                }
+            };
+            ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid', 'fbclid', 'msclkid'].forEach((key) => {
+                const value = params.get(key) || readStoredValue(`coai_${key}`) || readStoredValue(key) || '';
+                if (value) payload.append(key, value);
+            });
+
+            try {
+                const response = await fetch('https://formspree.io/f/xvzbkovo', {
+                    method: 'POST',
+                    body: payload,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (!response.ok) {
+                    throw new Error('Calculator unlock capture failed');
+                }
+                showUnlockedCalculator();
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'calc_unlocked', { page: window.location.pathname });
+                    gtag('event', 'generate_lead', { lead_type: 'calculator_unlock', page: window.location.pathname });
+                }
+                if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+            } catch (error) {
+                showUnlockedCalculator();
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'calc_unlock_error', { page: window.location.pathname });
+                }
+                alert('Calculator unlocked, but we could not save your email. Please try again or call (661) 610-9198.');
+            } finally {
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalLabel;
             }
-        });
 
-        // Copyright Year
-        document.getElementById('year').textContent = new Date().getFullYear();
+        }
+
+        function runAdvancedCalc() {
+            const webTraf = parseFloat(document.getElementById('webTraffic').value) || 0;
+            const webConv = parseFloat(document.getElementById('webConv').value) || 0;
+            const callsWk = parseFloat(document.getElementById('missedCalls').value) || 0;
+            const jobVal = parseFloat(document.getElementById('jobVal').value) || 0;
+
+            // Simple "What if conversion improved from current to 5%"
+            const currWebLeads = Math.round(webTraf * (webConv / 100));
+            const newWebLeads = Math.round(webTraf * 0.05); // Target 5%
+            let lostWebLeads = Math.max(0, newWebLeads - currWebLeads);
+
+            // Missed calls to jobs (Assume 30% close)
+            const lostCallLeadsPerMonth = Math.round(callsWk * 4.3 * 0.3);
+
+            document.getElementById('lostWebJobs').innerText = lostWebLeads + " jobs/mo";
+            document.getElementById('lostCallJobs').innerText = lostCallLeadsPerMonth + " jobs/mo";
+
+            const totalMoneyLost = (lostWebLeads + lostCallLeadsPerMonth) * jobVal;
+            document.getElementById('totalLostMRR').innerText = totalMoneyLost.toLocaleString();
+        }
+        document.addEventListener('DOMContentLoaded', runAdvancedCalc);
     </script>
+    <script src="script.js"></script>
 
+    <a href="tel:6616109198" class="floating-call" aria-label="Call now">📞</a>
+
+<script src="script.js" defer></script>
 </body>
+
 </html>

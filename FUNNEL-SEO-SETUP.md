@@ -68,7 +68,7 @@ If you want additional email delivery reliability, consider:
 <meta name="ai-content-type" content="Service provider - Local business">
 <meta name="ai-geography" content="Kern County, California, USA...">
 <meta name="ai-services" content="AI phone answering, website design...">
-<meta name="ai-contact" content="chaoticallyorganizedai@gmail.com, +1-661-420-3456">
+<meta name="ai-contact" content="chaoticallyorganizedai@gmail.com, +1-661-610-9198">
 ```
 
 These tags help AI assistants (ChatGPT, Claude, Perplexity) understand:
@@ -351,3 +351,4 @@ All CTAs have `data-cta` attributes for tracking:
 ---
 
 **Questions?** Contact: chaoticallyorganizedai@gmail.com
+

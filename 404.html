@@ -98,22 +98,69 @@
       "description": "Page not found. Chaotically Organized AI provides website design and AI automation services in Bakersfield and Kern County."
     }
     </script>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="nav-container">
+            <header>
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Chaotically Organized AI" style="height: 40px; vertical-align: middle;">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="voice-ai.html">Voice AI</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-main">
+                <ul class="nav-links" role="menubar">
+                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
+                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
+                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">/</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+            </div>
+            <div id="google_translate_element"></div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
         </div>
-        <div class="page-overlay"></div>
     </header>
 
     <section class="section">
@@ -151,7 +198,7 @@
                 </p>
                 <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">Get a Free Quote</a>
                 <p style="margin-top: 20px; font-size: 0.9rem; color: var(--text-muted);">
-                    Or call: <a href="tel:6614203456" style="color: var(--neon-core);">(661) 420-3456</a>
+                    Or call: <a href="tel:6616109198" style="color: var(--neon-core);">(661) 610-9198</a>
                 </p>
             </div>
         </div>
@@ -164,7 +211,7 @@
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-                <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a></span>
+                <span style="display: block;">📞 Office: <a href="tel:6616109198" style="color: var(--text-muted); text-decoration: none;">(661) 610-9198</a></span>
             </p>
             <p style="margin-top: 15px;">
                 <a href="index.html">Home</a> | 
@@ -196,5 +243,7 @@
 
         document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+<script src="script.js" defer></script>
 </body>
 </html>
+

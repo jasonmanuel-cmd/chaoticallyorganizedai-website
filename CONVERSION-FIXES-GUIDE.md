@@ -400,7 +400,8 @@ If you need help debugging:
 
 ---
 
-**Questions?** chaoticallyorganizedai@gmail.com or call (661) 420-3456
+**Questions?** chaoticallyorganizedai@gmail.com or call (661) 610-9198
 
 **Last Updated:** 2026-02-18
 **Version:** SUPER GOD MODE PRO v1.0
+

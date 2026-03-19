@@ -442,9 +442,9 @@ Replace form with simple mailto link temporarily:
 
 ### Or Direct Phone CTA:
 ```html
-<a href="tel:6614203456" 
+<a href="tel:6616109198" 
    style="display:block; padding:25px; background:#00e676; color:#000; text-align:center; font-size:1.3rem; font-weight:bold;">
-   📞 Call Now: (661) 420-3456
+   📞 Call Now: (661) 610-9198
 </a>
 <p style="text-align:center; color:#888;">Usually responds in 5 minutes</p>
 ```
@@ -452,3 +452,4 @@ Replace form with simple mailto link temporarily:
 ---
 
 **Do the Emergency Test Protocol RIGHT NOW and report back what you find!**
+

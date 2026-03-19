@@ -1,44 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZYCPQEBGTN');
-  
-  // Track conversion on page load
-  gtag('event', 'conversion', {
-    'send_to': 'G-ZYCPQEBGTN/CONVERSION_LABEL',
-    'value': 1.0,
-    'currency': 'USD',
-    'transaction_id': ''
-  });
-</script>
 
-<!-- Facebook Pixel Conversion Tracking -->
-<script>
-  if (typeof fbq !== 'undefined') {
-    fbq('track', 'Lead');
-    fbq('track', 'CompleteRegistration');
-  }
-</script>
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZYCPQEBGTN');
+
+        // Track lead conversion on page load
+        gtag('event', 'conversion', { conversion_type: 'thank_you_page' });
+        gtag('event', 'generate_lead', { lead_type: 'website_form', page: '/thank-you.html' });
+    </script>
+
+    <!-- Facebook Pixel Conversion Tracking -->
+    <script>
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return; n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = true;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = true;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '851220487780130');
+        fbq('track', 'PageView');
+        fbq('track', 'Lead');
+        fbq('track', 'CompleteRegistration');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=yes">
     <title>Request Received | Chaotically Organized AI</title>
-    <meta name="description" content="Thanks for your request. A specialist will review your details and contact you shortly.">
+    <meta name="description"
+        content="Thanks for your request. A specialist will review your details and contact you shortly. Call (661) 610-9198.">
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="https://chaoticallyorganizedai.com/thank-you.html">
     <link rel="stylesheet" href="style.css">
     <style>
         @media screen and (max-width: 768px) {
-            .container { width: 90% !important; padding: 0 15px !important; }
-            h1 { font-size: 2rem !important; }
-            .btn { width: 100%; box-sizing: border-box; }
+            .container {
+                width: 90% !important;
+                padding: 0 15px !important;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+            }
+
+            .btn {
+                width: 100%;
+                box-sizing: border-box;
+            }
         }
+
         .success-container {
             height: 100vh;
             display: flex;
@@ -46,27 +71,32 @@
             justify-content: center;
             text-align: center;
         }
+
         .next-steps {
             max-width: 500px;
             margin: 30px auto;
-            background: rgba(0,255,163,0.05);
+            background: rgba(0, 255, 163, 0.05);
             padding: 25px;
             border-radius: 8px;
             border: 1px solid var(--neon-core);
             text-align: left;
         }
+
         .next-steps h3 {
             color: var(--neon-core);
             margin-bottom: 15px;
         }
+
         .next-steps ol {
             margin: 0;
             padding-left: 20px;
             color: var(--text-muted);
         }
+
         .next-steps li {
             margin-bottom: 10px;
         }
+
         .contact-options {
             display: flex;
             justify-content: center;
@@ -75,7 +105,7 @@
             flex-wrap: wrap;
         }
     </style>
-<script type="application/ld+json">
+    <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -92,20 +122,57 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chaoticallyorganizedai.com/thank-you.html" />
     <meta property="og:title" content="Request Received | Chaotically Organized AI" />
-    <meta property="og:description" content="Thanks for your request. A specialist will review your details and contact you shortly." />
+    <meta property="og:description"
+        content="Thanks for your request. A specialist will review your details and contact you shortly." />
     <meta property="og:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
 
     <meta name="twitter:title" content="Request Received | Chaotically Organized AI" />
-    <meta name="twitter:description" content="Thanks for your request. A specialist will review your details and contact you shortly." />
+    <meta name="twitter:description"
+        content="Thanks for your request. A specialist will review your details and contact you shortly." />
     <meta name="twitter:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
     <div class="success-container">
         <div class="container">
             <div style="font-size: 5rem; color: var(--neon-core);">✓</div>
             <h1>Request Received.</h1>
             <p>An automation specialist will review your details and contact you shortly.</p>
-            
+
             <div class="next-steps">
                 <h3>📋 What Happens Next:</h3>
                 <ol>
@@ -115,24 +182,28 @@
                     <li><strong>15-minute discovery call</strong> to analyze your needs</li>
                 </ol>
             </div>
-            
+
             <div class="contact-options">
-                <a href="tel:6614203456" class="btn btn-primary">
-                    📞 Call Us: (661) 420-3456
+                <a href="tel:6616109198" class="btn btn-primary">
+                    📞 Call Us: (661) 610-9198
                 </a>
                 <a href="mailto:chaoticallyorganizedai@gmail.com" class="btn btn-secondary">
                     ✉️ Email Us
                 </a>
             </div>
-            
+
             <p style="margin-top: 40px;">
                 <a href="index.html" class="btn">← Return to Homepage</a>
             </p>
-            
+
             <p style="margin-top: 30px; font-size: 0.85rem; color: var(--text-muted);">
-                Questions? Reach out directly at <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--neon-core);">chaoticallyorganizedai@gmail.com</a>
+                Questions? Reach out directly at <a href="mailto:chaoticallyorganizedai@gmail.com"
+                    style="color: var(--neon-core);">chaoticallyorganizedai@gmail.com</a>
             </p>
         </div>
     </div>
+    <a href="tel:6616109198" class="floating-call" aria-label="Call now">📞</a>
+<script src="script.js" defer></script>
 </body>
+
 </html>

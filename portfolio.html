@@ -1,88 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Website Design Case Studies | Bakersfield, CA</title>
-    <meta name="description" content="Website design case studies for Bakersfield businesses. Real results: 40% conversion increase for local businesses.">
+    <title>Case Studies & Results | Chaotically Organized AI Bakersfield</title>
+    <meta name="description"
+        content="Detailed case studies of website builds and automation systems for Bakersfield HVAC, Restaurants, and Professional Services. Call now: 661-610-9198">
+    <meta name="format-detection" content="telephone=yes">
     <link rel="canonical" href="https://chaoticallyorganizedai.com/portfolio.html" />
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://chaoticallyorganizedai.com/portfolio.html" />
-    <meta property="og:title" content="Portfolio - Website Design Case Studies | Bakersfield, CA" />
-    <meta property="og:description" content="See real results from Bakersfield businesses we've helped with website design and AI automation." />
-    <meta property="og:image" content="https://chaoticallyorganizedai.com/logo.png" />
-    
-    <!-- Schema -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "CollectionPage",
-      "name": "Website Design Portfolio - Bakersfield, CA",
-      "description": "Case studies of websites built for Bakersfield and Kern County businesses",
-      "url": "https://chaoticallyorganizedai.com/portfolio.html",
-      "provider": {
-        "@type": "ProfessionalService",
-        "name": "Chaotically Organized AI"
-      }
-    }
-    </script>
     <link rel="stylesheet" href="style.css">
-    <meta name="twitter:card" content="summary_large_image" />
+
+    <style>
+        /* Floating Call Button */
+        .floating-call {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--neon-core);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(0, 255, 163, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 255, 163, 0.6);
+        }
+
+        @media (min-width: 769px) {
+            .floating-call {
+                display: none;
+            }
+        }
+    </style>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
-    <header>
-        <div class="nav-container">
+
+        <header>
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Website Design Bakersfield - SEO GEO AEO Optimization" style="height: 40px; vertical-align: middle;">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="contact.html">Contact</a></li>
-              <li><a href="portfolio.html" class="active">Portfolio</a></li>
-              <li><a href="industries.html">Industries</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-main">
+                <ul class="nav-links" role="menubar">
+                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <li><a href="portfolio.html" class="active" role="menuitem" tabindex="0">Case Studies</a></li>
+                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
+                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">/</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+            </div>
+            <div id="google_translate_element"></div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
         </div>
-        <div class="page-overlay"></div>
     </header>
 
-    <section class="section">
+    <section class="section" style="padding-top:120px;">
         <div class="container">
-            <h1 style="text-align: center;">Case Studies & Recent Work</h1>
-            <p style="text-align: center; max-width: 600px; margin: 0 auto 50px auto;">We help businesses in Bakersfield and Kern County get found online with websites designed for Google and AI search.</p>
+            <h1 style="text-align: center; margin-bottom:20px;">Case Studies & Results</h1>
+            <p style="text-align: center; max-width: 800px; margin: 0 auto 50px auto; color:#888;">We don't sell
+                "marketing." We build systems that solve real problems for local brands. Here are the numbers.</p>
 
-            <div class="case-study-grid">
-                <div class="case-study-card">
-                    <img src="images/philly-cheesesteak-1.jpg" alt="Phil's Cheesesteak Website">
-                    <h3>Phil's Cheesesteak</h3>
-                    <p>A local favorite that needed an online presence as vibrant as their sandwiches. We built a mobile-first website that showcases their menu and makes online ordering a breeze.</p>
-                    <a href="https://phils-cheesesteaks-and-more.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
+            <!-- DETAILED DEEP DIVES -->
+            <h2 style="margin-bottom:30px;">System Deep Dives</h2>
+            <div
+                style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:30px; margin-bottom:80px;">
+                <div class="glass-card" style="padding:0; overflow:hidden; border-radius:12px;">
+                    <div
+                        style="height:200px; background:#1a1a1a; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #333;">
+                        <span style="font-size:4rem;">❄️</span>
+                    </div>
+                    <div style="padding:30px;">
+                        <h3 style="color:#00e676;">HVAC Website & Systems</h3>
+                        <p style="color:#888; margin-bottom:20px;">How we took a local HVAC team from 40% missed calls
+                            to a 24/7 automated booking machine with 0% missed lead rate.</p>
+                        <a href="case-studies/hvac-systems-bakersfield.html" class="btn btn-primary">Read Case Study</a>
+                    </div>
                 </div>
 
-                <div class="case-study-card">
-                    <img src="images/credit-repair-1.jpg" alt="Edwin Ward Consulting Website">
-                    <h3>Edwin Ward Consulting</h3>
-                    <p>This client required a professional and trustworthy site to attract new leads. We delivered a clean, secure website with a clear call-to-action, resulting in a 40% increase in conversions.</p>
-                    <a href="https://edwinwardconsulting.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
+                <div class="glass-card" style="padding:0; overflow:hidden; border-radius:12px;">
+                    <div
+                        style="height:200px; background:#1a1a1a; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #333;">
+                        <span style="font-size:4rem;">🍕</span>
+                    </div>
+                    <div style="padding:30px;">
+                        <h3 style="color:#00e676;">Restaurant Online Funnel</h3>
+                        <p style="color:#888; margin-bottom:20px;">Saving $1,200/mo in 3rd-party fees while doubling
+                            direct web orders through a custom ordering system and SMS loyalty loop.</p>
+                        <a href="case-studies/restaurant-online-ordering-bakersfield.html" class="btn btn-primary">Read
+                            Case Study</a>
+                    </div>
                 </div>
 
-                <div class="case-study-card">
-                    <img src="images/senior-housing-1.jpg" alt="DFFB Senior Living Website">
-                    <h3>DFFB Senior Living</h3>
-                    <p>A compassionate service that needed a website to match. We created an accessible and easy-to-navigate site that helps families find the right housing for their loved ones.</p>
-                    <a href="https://dffbseniorliving.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
+                <div class="glass-card" style="padding:0; overflow:hidden; border-radius:12px;">
+                    <div
+                        style="height:200px; background:#1a1a1a; display:flex; align-items:center; justify-content:center; border-bottom:1px solid #333;">
+                        <span style="font-size:4rem;">⚖️</span>
+                    </div>
+                    <div style="padding:30px;">
+                        <h3 style="color:#00e676;">Prof Services Automation</h3>
+                        <p style="color:#888; margin-bottom:20px;">Deleting 15 hours of manual admin work every week by
+                            automating intake, document collection, and scheduling for a local firm.</p>
+                        <a href="case-studies/professional-services-automation.html" class="btn btn-primary">Read Case
+                            Study</a>
+                    </div>
                 </div>
+            </div>
 
-                <div class="case-study-card">
-                    <img src="images/hair-products-1.jpg" alt="Just For You by Katonya Website">
-                    <h3>Just For You by Katonya</h3>
-                    <p>An e-commerce store with a beautiful product line that needed a beautiful online storefront. We designed a visually stunning website with a seamless shopping experience.</p>
-                    <a href="https://justforyoubykatonya.com" target="_blank" rel="noopener" class="btn">Visit Website</a>
+            <!-- PREVIOUS WORK LOGOS/LINKS -->
+            <h2 style="margin-bottom:30px;">Previous Projects</h2>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;">
+                <div style="background:rgba(255,255,255,0.03); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <h4 style="color:#fff;">Phil's Cheesesteak</h4>
+                    <p style="color:#888; font-size:14px; margin-bottom:15px;">Mobile-first menu and ordering site.</p>
+                    <a href="https://phils-cheesesteaks-and-more.com" target="_blank"
+                        style="color:#00e676; text-decoration:none; font-size:13px;">Visit Site →</a>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <h4 style="color:#fff;">Edwin Ward Consulting</h4>
+                    <p style="color:#888; font-size:14px; margin-bottom:15px;">Professional consulting site with 40%
+                        conv. boost.</p>
+                    <a href="https://edwinwardconsulting.com" target="_blank"
+                        style="color:#00e676; text-decoration:none; font-size:13px;">Visit Site →</a>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <h4 style="color:#fff;">DFFB Senior Living</h4>
+                    <p style="color:#888; font-size:14px; margin-bottom:15px;">Compassionate UI for families in
+                        transition.</p>
+                    <a href="https://dffbseniorliving.com" target="_blank"
+                        style="color:#00e676; text-decoration:none; font-size:13px;">Visit Site →</a>
+                </div>
+                <div style="background:rgba(255,255,255,0.03); border:1px solid #333; padding:25px; border-radius:8px;">
+                    <h4 style="color:#fff;">Just For You by Katonya</h4>
+                    <p style="color:#888; font-size:14px; margin-bottom:15px;">E-commerce storefront for beauty
+                        products.</p>
+                    <a href="https://justforyoubykatonya.com" target="_blank"
+                        style="color:#00e676; text-decoration:none; font-size:13px;">Visit Site →</a>
                 </div>
             </div>
         </div>
@@ -90,49 +197,22 @@
 
     <footer>
         <div class="container" style="text-align: center;">
-            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
-                CHAOTICALLY ORGANIZED AI
-            </p>
+            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">CHAOTICALLY
+                ORGANIZED AI</p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
-                <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-                <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
+                📍 1712 19th St #216, Bakersfield, CA 93301<br>
+                📞 (661) 610-9198
             </p>
-            <p style="font-size: 0.9rem; color: #666;">
-                Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
-            </p>
-            <p style="margin-top: 15px;">
-                <a href="terms-of-service.html">Terms</a> | 
-                <a href="privacy-policy.html">Privacy</a> | 
-                <a href="contact.html">Contact</a>
-            </p>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
-                &copy; <span id="year"></span> Chaotically Organized AI. Proudly built in Bakersfield, CA.
+            <p style="margin-top:20px; font-size:0.8rem; color:#444;">
+                &copy; 2026 Chaotically Organized AI. <a href="careers.html" style="color:#00e676;">We're Hiring 🚀</a>
             </p>
         </div>
     </footer>
+    <script src="script.js"></script>
 
-    <script>
-    // Menu Toggle
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.querySelector('.nav-links');
-    const pageOverlay = document.querySelector('.page-overlay');
+    <a href="tel:6616109198" class="floating-call" aria-label="Call now">📞</a>
 
-    menuToggle.addEventListener('click', (event) => {
-        navLinks.classList.toggle('active');
-        pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-        event.stopPropagation();
-    });
-
-    document.addEventListener('click', (event) => {
-        if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
-            navLinks.classList.remove('active');
-            pageOverlay.style.display = 'none';
-        }
-    });
-
-    // Copyright Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js" defer></script>
 </body>
+
 </html>

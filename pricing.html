@@ -1,32 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-ZYCPQEBGTN');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZYCPQEBGTN"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZYCPQEBGTN');
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Our Services | Website Design & AI Automation | Bakersfield, CA</title>
-    <meta name="description" content="Future-proof website packages and AI automation for Bakersfield businesses. GEO & AEO optimization included. Contact us for a custom quote.">
-    <meta name="keywords" content="website design services, GEO optimization, AEO optimization, AI search ready, future-proof website, Bakersfield web design, ChatGPT optimization">
+    <meta name="description"
+        content="Future-proof website packages and AI automation for Bakersfield businesses. GEO & AEO optimization included. Contact us for a custom quote. Call now: 661-610-9198">
+    <meta name="keywords"
+        content="website design services, GEO optimization, AEO optimization, AI search ready, future-proof website, Bakersfield web design, ChatGPT optimization">
+    <meta name="format-detection" content="telephone=yes">
 
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://chaoticallyorganizedai.com/pricing.html" />
     <meta property="og:title" content="Our Services | Website Design & AI Automation | Bakersfield" />
-    <meta property="og:description" content="Future-proof website packages and AI automation. GEO & AEO optimization for AI search. Contact us for pricing." />
+    <meta property="og:description"
+        content="Future-proof website packages and AI automation. GEO & AEO optimization for AI search. Contact us for pricing." />
     <meta property="og:image" content="https://chaoticallyorganizedai.com/logo.png" />
 
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:title" content="Our Services | GEO & AEO for AI Search" />
-    <meta property="twitter:description" content="Future-proof website packages with GEO & AEO optimization. Ready for ChatGPT, Perplexity, and Claude." />
+    <meta property="twitter:description"
+        content="Future-proof website packages with GEO & AEO optimization. Ready for ChatGPT, Perplexity, and Claude." />
 
-        <script type="application/ld+json">
+    <script type="application/ld+json">
         {
             "@context": "https://schema.org",
             "@type": "WebPage",
@@ -46,22 +52,117 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* Floating Call Button */
+        .floating-call {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--neon-core);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            box-shadow: 0 4px 20px rgba(0, 255, 163, 0.4);
+            z-index: 9999;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .floating-call:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(0, 255, 163, 0.6);
+        }
+
+        @media (min-width: 769px) {
+            .floating-call {
+                display: none;
+            }
+        }
+
         /* MOBILE FIXES */
         @media screen and (max-width: 768px) {
-            .container { width: 90% !important; padding: 0 15px !important; overflow-x: hidden; }
-            div[style*="grid-template-columns"], .grid-container, .services-grid { grid-template-columns: 1fr !important; gap: 30px !important; }
-            .menu-toggle { display: block !important; background: none; border: none; color: white; font-size: 2rem; cursor: pointer; position: absolute; right: 20px; top: 20px; z-index: 10001; }
-            .nav-links { display: none; width: 100%; flex-direction: column; background: rgba(0,0,0,0.98); position: fixed; top: 0; left: 0; height: 100%; z-index: 10000; padding: 80px 0; text-align: center; border-bottom: 1px solid #333; }
-            .nav-links.active { display: flex !important; }
-            .nav-links li { margin: 20px 0; }
-            h1 { font-size: 2rem !important; line-height: 1.2 !important; }
-            h2 { font-size: 1.5rem !important; }
-            h3 { font-size: 1.2rem !important; }
-            .glass-card { margin-bottom: 20px; width: 100% !important; box-sizing: border-box; padding: 20px !important; }
-            img { max-width: 100% !important; height: auto !important; }
+            .container {
+                width: 90% !important;
+                padding: 0 15px !important;
+                overflow-x: hidden;
+            }
+
+            div[style*="grid-template-columns"],
+            .grid-container,
+            .services-grid {
+                grid-template-columns: 1fr !important;
+                gap: 30px !important;
+            }
+
+            .menu-toggle {
+                display: block !important;
+                background: none;
+                border: none;
+                color: white;
+                font-size: 2rem;
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                top: 20px;
+                z-index: 10001;
+            }
+
+            .nav-links {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                background: rgba(0, 0, 0, 0.98);
+                position: fixed;
+                top: 0;
+                left: 0;
+                height: 100%;
+                z-index: 10000;
+                padding: 80px 0;
+                text-align: center;
+                border-bottom: 1px solid #333;
+            }
+
+            .nav-links.active {
+                display: flex !important;
+            }
+
+            .nav-links li {
+                margin: 20px 0;
+            }
+
+            h1 {
+                font-size: 2rem !important;
+                line-height: 1.2 !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+            }
+
+            h3 {
+                font-size: 1.2rem !important;
+            }
+
+            .glass-card {
+                margin-bottom: 20px;
+                width: 100% !important;
+                box-sizing: border-box;
+                padding: 20px !important;
+            }
+
+            img {
+                max-width: 100% !important;
+                height: auto !important;
+            }
         }
+
         @media screen and (min-width: 769px) {
-            .menu-toggle { display: none !important; }
+            .menu-toggle {
+                display: none !important;
+            }
         }
 
         .services-grid {
@@ -70,6 +171,7 @@
             gap: 30px;
             margin: 40px 0;
         }
+
         .service-card {
             background: var(--void-card);
             backdrop-filter: blur(12px);
@@ -81,16 +183,19 @@
             position: relative;
             overflow: hidden;
         }
+
         .service-card:hover {
             border-color: var(--neon-core);
             transform: translateY(-5px);
             box-shadow: 0 0 25px var(--neon-dim);
         }
+
         .service-card.featured {
             border-color: var(--neon-core);
             background: rgba(0, 255, 102, 0.05);
             box-shadow: 0 0 15px var(--neon-dim);
         }
+
         .badge {
             position: absolute;
             top: 15px;
@@ -104,57 +209,111 @@
             transform: rotate(45deg);
             box-shadow: 0 0 10px var(--neon-glow);
         }
+
         .feature-list {
             list-style: none;
             padding: 0;
             margin: 25px 0;
             text-align: left;
         }
+
         .feature-list li {
             padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
             font-size: 0.95rem;
         }
+
         .feature-list li:before {
             content: "✓ ";
             color: var(--neon-core);
             font-weight: bold;
             margin-right: 8px;
         }
+
         .btn-primary {
             box-shadow: 0 0 15px var(--neon-dim);
         }
+
         body {
             color: #B0B0B0;
         }
     </style>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
 </head>
+
 <body>
 
-    <header>
-        <div class="nav-container">
+        <header>
+        <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
-                <img src="logo.png" alt="Website Design Bakersfield - SEO GEO AEO Optimization" style="height: 40px; vertical-align: middle;">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <button class="menu-toggle">☰</button>
-            <ul class="nav-links">
-              <li><a href="index.html">Home</a></li>
-              <li><a href="portfolio.html">Portfolio</a></li>
-              <li><a href="industries.html">Industries</a></li>
-              <li><a href="resources.html">Resources</a></li>
-              <li><a href="contact.html">Contact</a></li>
-            </ul>
+            <div class="nav-main">
+                <ul class="nav-links" role="menubar">
+                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
+                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
+                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
+                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+                </ul>
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">/</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+            </div>
+            <div id="google_translate_element"></div>
+            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
         </div>
-        <div class="page-overlay"></div>
     </header>
 
     <section class="section" style="text-align: center; padding-top: 100px; padding-bottom: 40px;">
         <div class="container">
             <h1>Our Services</h1>
-            <p style="max-width: 700px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.6; color: var(--text-muted);">
-                <strong>Traditional SEO is dying.</strong> Our services are built for the AI era—optimized for ChatGPT, Perplexity, and Claude. GEO & AEO included in every package. <strong>Contact us for custom pricing.</strong>
+            <p
+                style="max-width: 700px; margin: 0 auto 40px auto; font-size: 1.2rem; line-height: 1.6; color: var(--text-muted);">
+                <strong>Traditional SEO is dying.</strong> Our services are built for the AI era—optimized for ChatGPT,
+                Perplexity, and Claude. GEO & AEO included in every package. <strong>Contact us for custom
+                    pricing.</strong>
             </p>
         </div>
     </section>
@@ -175,7 +334,8 @@
                         <li>Google Business Profile setup</li>
                         <li>Multiple revision rounds</li>
                     </ul>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: New businesses entering the AI era</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: New
+                        businesses entering the AI era</p>
                     <a href="contact.html" class="btn">Get a Quote</a>
                 </div>
 
@@ -193,7 +353,8 @@
                         <li>Call transcripts & analytics</li>
                         <li>Custom voice training</li>
                     </ul>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: Trade businesses missing calls</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: Trade
+                        businesses missing calls</p>
                     <a href="contact.html" class="btn btn-primary">Get a Quote</a>
                 </div>
 
@@ -210,15 +371,19 @@
                         <li>Monthly visibility reports</li>
                         <li>Ongoing AI search optimization</li>
                     </ul>
-                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: Businesses wanting AI visibility</p>
+                    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Best for: Businesses
+                        wanting AI visibility</p>
                     <a href="contact.html" class="btn">Get a Quote</a>
                 </div>
             </div>
 
-            <div class="glass-card" style="max-width: 700px; margin: 50px auto; text-align: center; border-color: var(--neon-core);">
+            <div class="glass-card"
+                style="max-width: 700px; margin: 50px auto; text-align: center; border-color: var(--neon-core);">
                 <h3 style="margin-bottom: 15px;">Ready to Get Started?</h3>
-                <p style="color: var(--text-muted); margin-bottom: 25px;">Every business is unique. Contact us for a personalized quote tailored to your specific needs and goals.</p>
-                <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">Contact Us for Pricing</a>
+                <p style="color: var(--text-muted); margin-bottom: 25px;">Every business is unique. Contact us for a
+                    personalized quote tailored to your specific needs and goals.</p>
+                <a href="contact.html" class="btn btn-primary" style="font-size: 1.1rem; padding: 15px 40px;">Contact Us
+                    for Pricing</a>
             </div>
         </div>
     </section>
@@ -230,15 +395,17 @@
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
                 <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-                <span style="display: block;">📞 Office: <a href="tel:6614203456" style="color: var(--text-muted); text-decoration: none;">(661) 420-3456</a> | Cell: <a href="tel:8638010794" style="color: var(--text-muted); text-decoration: none;">(863) 801-0794</a></span>
-                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com" style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
+                <span style="display: block;">📞 Office: <a href="tel:6616109198"
+                        style="color: var(--text-muted); text-decoration: none;">(661) 610-9198</a></span>
+                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com"
+                        style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
             </p>
             <p style="font-size: 0.9rem; color: #666;">
                 Serving Trade Businesses in Shafter | Delano | Oildale | Rosedale | Kern County
             </p>
             <p style="margin-top: 15px;">
-                <a href="terms-of-service.html">Terms</a> | 
-                <a href="privacy-policy.html">Privacy</a> | 
+                <a href="terms-of-service.html">Terms</a> |
+                <a href="privacy-policy.html">Privacy</a> |
                 <a href="contact.html">Contact</a>
             </p>
             <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
@@ -247,28 +414,11 @@
         </div>
     </footer>
 
-    <script>
-        // Menu Toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
-        const pageOverlay = document.querySelector('.page-overlay');
+    <script src="script.js"></script>
 
-        menuToggle.addEventListener('click', (event) => {
-            navLinks.classList.toggle('active');
-            pageOverlay.style.display = navLinks.classList.contains('active') ? 'block' : 'none';
-            event.stopPropagation();
-        });
+    <a href="tel:6616109198" class="floating-call" aria-label="Call now">📞</a>
 
-        document.addEventListener('click', (event) => {
-            if (navLinks.classList.contains('active') && !navLinks.contains(event.target)) {
-                navLinks.classList.remove('active');
-                pageOverlay.style.display = 'none';
-            }
-        });
-
-        // Copyright Year
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
-
+<script src="script.js" defer></script>
 </body>
+
 </html>

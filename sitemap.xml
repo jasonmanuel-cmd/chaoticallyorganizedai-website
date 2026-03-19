@@ -1,214 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
-  
-  <!-- CORE PAGES - Highest Priority -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://chaoticallyorganizedai.com/</loc>
-    <lastmod>2026-02-18</lastmod>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
-    <image:image>
-      <image:loc>https://chaoticallyorganizedai.com/og-image.jpg</image:loc>
-      <image:title>Chaotically Organized AI - Website Design & AI Automation</image:title>
-    </image:image>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/voice-ai.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/services.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/intake.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://chaoticallyorganizedai.com/web-design-bakersfield.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/contact.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- SERVICE/INDUSTRY HUB PAGES - High Priority -->
-  <url>
-    <loc>https://chaoticallyorganizedai.com/industries.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/automation-systems-bakersfield.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/pricing.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/ai-phone-answering-bakersfield.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <priority>0.95</priority>
   </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/resources.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- TRADE-SPECIFIC LANDING PAGES - High Priority for Local SEO -->
-  <url>
-    <loc>https://chaoticallyorganizedai.com/hvac-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/plumbing-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/electrical-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/roofing-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/contractors-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/moving-phone-answering.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-
-  <!-- CITY-SPECIFIC LANDING PAGES - High Priority for Local SEO -->
-  <url>
-    <loc>https://chaoticallyorganizedai.com/website-design-shafter.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/website-design-delano.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/website-design-wasco.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- CONTENT PAGES - Medium-High Priority -->
-  <url>
-    <loc>https://chaoticallyorganizedai.com/systems-audit.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/complete-guide-missed-call-automation.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  
-  <url>
-    <loc>https://chaoticallyorganizedai.com/seo-vs-geo-guide.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- SERVICE PAGES - Medium Priority -->
-  <url>
-    <loc>https://chaoticallyorganizedai.com/gel.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  
   <url>
     <loc>https://chaoticallyorganizedai.com/portfolio.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.65</priority>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/dashboard.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/resources.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/careers.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/contact.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/intake.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/deep-dive.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
-  <!-- SUPPORT PAGES - Lower Priority -->
   <url>
-    <loc>https://chaoticallyorganizedai.com/support.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/case-studies/hvac-systems-bakersfield.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/venues.html</loc>
-    <lastmod>2026-02-18</lastmod>
+    <loc>https://chaoticallyorganizedai.com/case-studies/restaurant-online-ordering-bakersfield.html</loc>
+    <lastmod>2026-02-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/case-studies/professional-services-automation.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 
-  <!-- LEGAL PAGES - Low Priority -->
   <url>
-    <loc>https://chaoticallyorganizedai.com/privacy-policy.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://chaoticallyorganizedai.com/articles/ai-phone-answering-bakersfield-trades.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/terms-of-service.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.4</priority>
+    <loc>https://chaoticallyorganizedai.com/articles/bakersfield-website-conversion-secrets.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/thank-you.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.3</priority>
+    <loc>https://chaoticallyorganizedai.com/articles/aeo-for-local-service-businesses.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-  
   <url>
-    <loc>https://chaoticallyorganizedai.com/404.html</loc>
-    <lastmod>2026-02-18</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.2</priority>
+    <loc>https://chaoticallyorganizedai.com/articles/7-revenue-leaks-local-business.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
   </url>
-  
+
+  <url>
+    <loc>https://chaoticallyorganizedai.com/website-design-delano.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/website-design-shafter.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://chaoticallyorganizedai.com/website-design-wasco.html</loc>
+    <lastmod>2026-02-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
 </urlset>

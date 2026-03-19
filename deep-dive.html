@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You & Deep Dive | Chaotically Organized AI</title>
+    <meta name="description"
+        content="Thank you for your request. Please complete this quick 5-question deep dive so we can prepare for our setup call.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://chaoticallyorganizedai.com/deep-dive.html" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+            color: #fff;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .logo img {
+            height: 45px;
+        }
+
+        .thank-you-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .thank-you-header h1 {
+            color: #00e676;
+            margin-bottom: 10px;
+            font-size: 2rem;
+        }
+
+        .thank-you-header p {
+            color: #bbb;
+            font-size: 1.1rem;
+        }
+
+        .form-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid #333;
+            border-radius: 16px;
+            padding: 35px;
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #00e676;
+        }
+
+        select option {
+            background: #1a1a1a;
+            color: #fff;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 18px;
+            background: #00e676;
+            color: #000;
+            border: none;
+            font-weight: bold;
+            font-size: 18px;
+            cursor: pointer;
+            border-radius: 8px;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #00ff8c;
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:disabled {
+            background: #333;
+            color: #666;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .step {
+            display: none;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .success-message {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .success-message .icon {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .success-message h2 {
+            color: #00e676;
+            margin-bottom: 15px;
+        }
+
+        .success-message p {
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        @media (max-width: 480px) {
+            .form-box {
+                padding: 25px 20px;
+            }
+
+            .thank-you-header h1 {
+                font-size: 1.6rem;
+            }
+
+            .form-box h2 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+    <!-- Google Translate API -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'es',
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <style>
+        /* Hide Google Translate Bar */
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon,
+        .goog-te-gadget-simple span,
+        .goog-te-menu-value span:nth-child(3),
+        .goog-te-menu-value span:nth-child(5),
+        .goog-te-menu-value img {
+            display: none !important;
+        }
+        .goog-te-gadget-simple {
+            background-color: transparent !important;
+            border: none !important;
+            padding: 0 !important;
+        }
+        body {
+            top: 0 !important;
+        }
+        #google_translate_element {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="logo.png" alt="Chaotically Organized AI"></a>
+        </div>
+
+        <div class="thank-you-header" id="tyHeader">
+            <h1>Audit Request Received! ✅</h1>
+            <p>Our team is reviewing your details.</p>
+        </div>
+
+        <div class="form-box">
+            <!-- STEP 1: Deep Dive Form -->
+            <div class="step active" id="formStep">
+                <h2>Help Us Prepare For Your Audit</h2>
+                <p class="subtitle">Answer these 5 quick questions so we can bring actionable data to our call.</p>
+
+                <form id="deepDiveForm" action="https://formspree.io/f/xvzbkovo" method="POST">
+                    <!-- Link back to the original submission by asking for email again (or hidden if we used URL params, but we redirect simply) -->
+                    <input type="hidden" name="form_type" value="deep_dive_segmentation">
+                    <input type="hidden" name="_subject" value="Deep Dive Segmentation Submitted">
+                    <div style="position:absolute; left:-9999px; opacity:0;" aria-hidden="true">
+                        <input type="text" name="website" tabindex="-1" autocomplete="off" value="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>1. What industry/service type are you in?</label>
+                        <input type="text" name="industry" placeholder="e.g., Plumbing, HVAC, Roofing" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>2. What is your current monthly ad spend or marketing budget?</label>
+                        <select name="ad_spend" required>
+                            <option value="">Select Ad Spend</option>
+                            <option value="0">None / Word of mouth</option>
+                            <option value="under_1k">Under $1,000</option>
+                            <option value="1k_to_5k">$1,000 - $5,000</option>
+                            <option value="5k_to_10k">$5,000 - $10,000</option>
+                            <option value="over_10k">$10,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>3. How many leads or calls do you get per week?</label>
+                        <select name="call_volume" required>
+                            <option value="">Select Volume</option>
+                            <option value="under_10">0 - 10 calls</option>
+                            <option value="10_to_30">10 - 30 calls</option>
+                            <option value="30_to_100">30 - 100 calls</option>
+                            <option value="over_100">100+ calls</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>4. What CRM or tech stack do you currently use?</label>
+                        <input type="text" name="tech_stack" placeholder="e.g., ServiceTitan, Jobber, GoHighLevel, None"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>5. What is the biggest bottleneck in your business right now?</label>
+                        <textarea name="bottleneck"
+                            placeholder="e.g., Website not converting, missing calls, manual follow-up takes too long..."
+                            required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Confirm Email (to link your answers)</label>
+                        <input type="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary" id="submitBtn">Submit Answers →</button>
+                </form>
+            </div>
+
+            <!-- STEP 2: SUCCESS -->
+            <div class="step" id="successStep">
+                <div class="success-message">
+                    <div class="icon">🚀</div>
+                    <h2>You're All Set</h2>
+                    <p>We've received your answers. We will be in touch shortly to go over your audit.</p>
+
+                    <p style="margin-top:25px;">
+                        <a href="index.html" style="color:#00e676; text-decoration:none; font-weight:bold;">← Return to
+                            Homepage</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('deepDiveForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const botField = this.querySelector('input[name="website"]');
+            if (botField && botField.value.trim() !== '') {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'bot_form_blocked', { form_id: 'deepDiveForm', page: window.location.pathname });
+                }
+                return;
+            }
+
+            const btn = document.getElementById('submitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Submitting...';
+
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: { 'Accept': 'application/json' }
+            }).then(response => {
+                if (response.ok) {
+                    document.getElementById('tyHeader').style.display = 'none';
+                    document.getElementById('formStep').classList.remove('active');
+                    document.getElementById('successStep').classList.add('active');
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'generate_lead', { lead_type: 'deep_dive', page: window.location.pathname });
+                    }
+                    if (typeof fbq !== 'undefined') fbq('track', 'Lead');
+                } else {
+                    alert('Something went wrong. Please try again.');
+                    btn.disabled = false;
+                    btn.textContent = 'Submit Answers →';
+                }
+            }).catch(error => {
+                alert('Something went wrong. Please try again.');
+                btn.disabled = false;
+                btn.textContent = 'Submit Answers →';
+            });
+        });
+
+        // Try to prepopulate email if it was passed via URL from a custom redirect script (though Formspree default doesn't do this, we add it just in case)
+        const urlParams = new URLSearchParams(window.location.search);
+        const prefilledEmail = urlParams.get('email');
+        if (prefilledEmail) {
+            document.querySelector('input[name="email"]').value = prefilledEmail;
+        }
+    </script>
+    <script src="script.js"></script>
+<script src="script.js" defer></script>
+</body>
+
+</html>
