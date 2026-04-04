@@ -59,13 +59,13 @@
             right: 20px;
             width: 60px;
             height: 60px;
-            background: var(--neon-core);
+            background: var(--crimson-core);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 28px;
-            box-shadow: 0 4px 20px rgba(0, 255, 163, 0.4);
+            box-shadow: 0 4px 20px var(--crimson-dim);
             z-index: 9999;
             text-decoration: none;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -185,13 +185,13 @@
         }
 
         .service-card:hover {
-            border-color: var(--neon-core);
+            border-color: var(--crimson-core);
             transform: translateY(-5px);
             box-shadow: 0 0 25px var(--neon-dim);
         }
 
         .service-card.featured {
-            border-color: var(--neon-core);
+            border-color: var(--crimson-core);
             background: rgba(0, 255, 102, 0.05);
             box-shadow: 0 0 15px var(--neon-dim);
         }
@@ -200,7 +200,7 @@
             position: absolute;
             top: 15px;
             right: -40px;
-            background: var(--neon-core);
+            background: var(--crimson-core);
             color: var(--void-bg);
             padding: 5px 40px;
             font-size: 0.9rem;
@@ -226,7 +226,7 @@
 
         .feature-list li:before {
             content: "✓ ";
-            color: var(--neon-core);
+            color: var(--crimson-core);
             font-weight: bold;
             margin-right: 8px;
         }
@@ -245,7 +245,7 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                
                 autoDisplay: false
             }, 'google_translate_element');
         }
@@ -277,7 +277,7 @@
 
 <body>
 
-        <header>
+            <header>
         <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
@@ -299,7 +299,7 @@
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
             </div>
             <div id="google_translate_element"></div>
             <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
@@ -323,7 +323,7 @@
             <div class="services-grid">
                 <div class="service-card">
                     <h3>Website Design</h3>
-                    <p style="color: var(--neon-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
+                    <p style="color: var(--crimson-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
                     <ul class="feature-list">
                         <li>Responsive website design</li>
                         <li>Mobile-optimized</li>
@@ -342,7 +342,7 @@
                 <div class="service-card featured">
                     <div class="badge">Most Popular</div>
                     <h3>AI Phone Answering</h3>
-                    <p style="color: var(--neon-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
+                    <p style="color: var(--crimson-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
                     <ul class="feature-list">
                         <li>24/7 AI call answering</li>
                         <li>Lead qualification</li>
@@ -360,7 +360,7 @@
 
                 <div class="service-card">
                     <h3>GEL Optimization</h3>
-                    <p style="color: var(--neon-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
+                    <p style="color: var(--crimson-core); font-size: 1.1rem; margin: 20px 0;">Custom Quote</p>
                     <ul class="feature-list">
                         <li>AI visibility testing</li>
                         <li>ChatGPT, Claude, Perplexity analysis</li>
@@ -378,7 +378,7 @@
             </div>
 
             <div class="glass-card"
-                style="max-width: 700px; margin: 50px auto; text-align: center; border-color: var(--neon-core);">
+                style="max-width: 700px; margin: 50px auto; text-align: center; border-color: var(--crimson-core);">
                 <h3 style="margin-bottom: 15px;">Ready to Get Started?</h3>
                 <p style="color: var(--text-muted); margin-bottom: 25px;">Every business is unique. Contact us for a
                     personalized quote tailored to your specific needs and goals.</p>
@@ -390,7 +390,7 @@
 
     <footer>
         <div class="container" style="text-align: center;">
-            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+            <p style="font-weight: 700; color: var(--crimson-core); margin-bottom: 15px; letter-spacing: 1px;">
                 CHAOTICALLY ORGANIZED AI
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">

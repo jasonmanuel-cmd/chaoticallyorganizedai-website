@@ -267,72 +267,53 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
                 autoDisplay: false
             }, 'google_translate_element');
         }
     </script>
     <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <style>
-        /* Hide Google Translate Bar */
-        .goog-te-banner-frame.skiptranslate, 
+        /* Hide ALL Google Translate UI Elements */
+        .goog-te-banner-frame.skiptranslate,
         .goog-te-gadget-icon,
         .goog-te-gadget-simple span,
-        .goog-te-menu-value span:nth-child(3),
-        .goog-te-menu-value span:nth-child(5),
-        .goog-te-menu-value img {
+        .goog-te-menu-value span,
+        .goog-te-menu-value img,
+        .goog-te-gadget,
+        .goog-te-combo,
+        #google_translate_element,
+        #goog-gt-tt,
+        .goog-te-spinner-pos,
+        .goog-te-balloon-frame {
             display: none !important;
+            visibility: hidden !important;
+            pointer-events: none !important;
+            height: 0 !important;
+            width: 0 !important;
+            overflow: hidden !important;
         }
-        .goog-te-gadget-simple {
-            background-color: transparent !important;
-            border: none !important;
-            padding: 0 !important;
-        }
+
         body {
             top: 0 !important;
+            position: relative;
         }
-        #google_translate_element {
-            display: none;
-        }
+
+        #goog-gt-tt { display: none !important; }
+        .goog-text-highlight { background: none !important; box-shadow: none !important; }
     </style>
 </head>
 
-<body>
-
-    <!-- Urgency Banner -->
-    <div class="urgency-banner" role="alert">
-        <span>⚡ Limited Availability: Only 3 Free Audits Remaining This Week</span>
-        <button class="urgency-close" onclick="this.parentElement.style.display='none'"
-            aria-label="Close urgency banner">×</button>
+<body class="home-page dark-mode">
+    <div class="neural-pulse-bg">
+        <div class="neural-grid"></div>
     </div>
 
     <header>
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+        <div class="nav-container" style="justify-content: center;">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <div class="nav-main">
-                <ul class="nav-links" role="menubar">
-                    <li><a href="index.html" class="active" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
-                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
-                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
-                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
-                </ul>
-                <div class="lang-switcher">
-                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
-                        <span class="lang-en">EN</span>
-                        <span class="lang-divider">/</span>
-                        <span class="lang-es">ES</span>
-                    </button>
-                </div>
-                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
-            </div>
-            <div id="google_translate_element"></div>
-            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false"
-                aria-controls="main-menu">☰</button>
         </div>
     </header>
 
@@ -340,14 +321,15 @@
     <section class="hero-conversion">
         <div class="container hero-flex">
             <div class="hero-content">
-                <p class="eyebrow">⚡ Kern County's #1 AI-Driven Revenue Recovery System</p>
+                <p class="eyebrow">⚡ The Point of No Return</p>
                 <h1>
-                    Stop Losing Jobs<br>
-                    <span style="color: var(--neon-core);">To Voicemail.</span>
+                    Your Revenue Recovery<br>
+                    <span style="color: var(--crimson-core);">Audit.</span>
                 </h1>
                 <p class="hero-subhead">
-                    We build high-converting websites and AI phone systems that answer every call and book every
-                    job—24/7—so you never lose a lead to a competitor again.
+                    Every element on this page serves one purpose: to show you the exact cost of your hesitation. 
+                    Most businesses discover they're bleeding $8,000-$15,000 monthly.<br>
+                    In 90 seconds, you'll know your exact hemorrhage rate.
                 </p>
                 <div class="hero-badges">
                     <span class="trust-badge">★ 5-Star Rated ROI</span>
@@ -355,14 +337,20 @@
                     <span class="trust-badge">⚡ 48-Hour Deployment</span>
                 </div>
                 <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                    <a href="#audit-form" class="btn btn-primary btn-large pulse-btn">Get My Free Revenue Audit</a>
+                    <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
                     <a href="tel:6616109198" class="btn btn-large"
-                        style="border-color: rgba(255,255,255,0.2); color: #fff;">📞 Call (661) 610-9198</a>
+                        style="border-color: rgba(255,255,255,0.2); color: #fff;">📞 (661) 610-9198</a>
                 </div>
             </div>
             <div class="hero-form" id="audit-form">
-                <h3>Free Revenue Recovery Audit</h3>
-                <p>See exactly how many leads you're losing and how to fix it in 2 minutes.</p>
+                <h3>Revenue Recovery Audit</h3>
+                <p>The moment you see these numbers, hesitation becomes a choice.</p>
+                
+                <div style="background:rgba(255,68,68,0.05); border:1px solid rgba(255,68,68,0.2); border-radius:8px; padding:20px; margin-bottom:25px;">
+                    <p style="color:#ff4444; font-weight:bold; margin-bottom:10px;">⚠️ Cipher-Level Honesty</p>
+                    <p style="color:#fff; font-size:0.9rem; margin:0;">If your business is too disorganized for AI to save right now, we'll tell you. Fix your intake, then call us. We don't take on clients we can't transform.</p>
+                </div>
+                
                 <form id="miniForm" action="https://formspree.io/f/xvzbkovo" method="POST">
                     <input type="hidden" name="form_type" value="homepage_mini">
                     <input type="hidden" name="_next" value="https://chaoticallyorganizedai.com/thank-you.html">
@@ -370,70 +358,106 @@
                     <input type="text" name="name" placeholder="Contact Name *" required>
                     <input type="email" name="email" placeholder="Email Address *" required>
                     <input type="tel" name="phone" placeholder="Phone Number *" required>
-                    <select name="main_problem" required>
-                        <option value="" disabled selected>Primary Goal *</option>
-                        <option value="need_website">New Website that Converts</option>
-                        <option value="missed_calls">Stop Missing Phone Calls</option>
-                        <option value="automation">Automate My Lead Follow-up</option>
-                        <option value="seo_aeo">Optimize for AI & Google Search</option>
-                    </select>
-                    <button type="submit" class="pulse-btn" style="width:100%;">🚀 Generate My Report</button>
-                    <a href="services.html"
-                        style="color: var(--neon-core); text-decoration:none; font-size:15px; font-weight:bold; display:block; text-align:center; padding:8px; border:1px solid var(--neon-core); border-radius:4px; margin-top:8px;">View
-                        Website Packages</a>
+                    <button type="submit" class="pulse-btn" style="width:100%;">🔥 Show Me The Cost</button>
                 </form>
+                <div style="display:flex; gap:15px; justify-content:center; align-items:center; margin-top:15px; flex-wrap:wrap;">
+                    <span style="font-size:0.75rem; color:#666; display:flex; align-items:center; gap:4px;">🔒 SSL Secure</span>
+                    <span style="font-size:0.75rem; color:#666; display:flex; align-items:center; gap:4px;">📞 Response in 2 hrs</span>
+                    <span style="font-size:0.75rem; color:#666; display:flex; align-items:center; gap:4px;">🚫 No spam. Ever.</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- CALCULATOR SECTION -->
-    <section class="section" style="background:rgba(0,255,163,0.03);">
+    <section class="section" style="background:var(--crimson-dim);">
         <div class="container">
-            <h2 style="text-align:center; margin-bottom:10px;">Calculate Your Missed Call Losses</h2>
-            <p style="text-align:center; color:#888; margin-bottom:40px;">Most local service businesses are shocked by
-                these numbers</p>
+            <h2 style="text-align:center; margin-bottom:10px;">Calculate Your Revenue Leak</h2>
+            <p style="text-align:center; color:#888; margin-bottom:40px;">Interactive Loss Aversion: See exactly what you're losing every month.</p>
 
-            <div
-                style="max-width:700px; margin:0 auto; background:var(--void-card); border:1px solid var(--glass-border); border-radius:12px; padding:30px;">
-                <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:25px;">
-                    <div>
-                        <label style="display:block; margin-bottom:8px; color:#888;">Monthly Website Traffic</label>
-                        <input type="number" id="webTraffic" value="500">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start;">
+                <!-- Left: Controls -->
+                <div style="background:var(--void-card); border:1px solid var(--glass-border); border-radius:12px; padding:30px;">
+                    <div style="margin-bottom:25px;">
+                        <label style="display:block; margin-bottom:8px; color:#888;">Missed Calls Per Day</label>
+                        <input type="range" id="missedCalls" min="0" max="30" value="5">
+                        <p style="text-align:right; font-size:1.2rem; color: var(--crimson-core); margin-top:5px;"><span id="missedValue">5</span> calls</p>
                     </div>
-                    <div>
-                        <label style="display:block; margin-bottom:8px; color:#888;">Current Conv. Rate (%)</label>
-                        <input type="number" id="convRate" value="2" step="0.1">
+
+                    <div style="margin-bottom:25px;">
+                        <label style="display:block; margin-bottom:8px; color:#888;">Average Job Value ($)</label>
+                        <input type="range" id="jobValue" min="100" max="10000" value="1200" step="100">
+                        <p style="text-align:right; font-size:1.2rem; color: var(--crimson-core); margin-top:5px;">$<span id="jobValueDisplay">1,200</span></p>
+                    </div>
+
+                    <div style="margin-bottom:25px;">
+                        <label style="display:block; margin-bottom:8px; color:#888;">Closing Rate (%)</label>
+                        <input type="range" id="closeRate" min="5" max="100" value="30">
+                        <p style="text-align:right; font-size:1.2rem; color: var(--crimson-core); margin-top:5px;"><span id="closeRateValue">30</span>%</p>
+                    </div>
+
+                    <div style="background:rgba(255,68,68,0.1); border:1px solid #ff4444; border-radius:8px; padding:20px; text-align:center; margin-top:30px; position:relative; overflow:hidden;">
+                        <div class="hud-scanner"></div>
+                        <p style="color:#888; margin-bottom:5px;">Monthly Revenue Hemorrhage:</p>
+                        <p style="font-size:3rem; color:#ff0033; font-weight:900; margin:0; text-shadow: 0 0 20px var(--crimson-glow);">$<span id="revenue-leak">5,472</span></p>
+                        <p style="color:#888; font-size:0.8rem; margin-top:10px;">Based on 30.4 average days/month</p>
                     </div>
                 </div>
 
-                <div style="margin-bottom:25px;">
-                    <label style="display:block; margin-bottom:8px; color:#888;">How many calls do you miss per
-                        day?</label>
-                    <input type="range" id="missedCalls" min="0" max="20" value="4">
-                    <p style="text-align:center; font-size:1.5rem; color: var(--neon-core); margin-top:10px;"><span
-                            id="missedValue">4</span> calls/day</p>
-                </div>
+                <!-- Right: Visual Cues -->
+                <div>
+                    <div class="pain-graphic" style="margin-top:0; background:var(--void-card); border:1px solid var(--glass-border); padding:30px; border-radius:16px;">
+                        <h3>The Revenue Split</h3>
+                        <div class="bar-chart">
+                            <div class="bar-container">
+                                <div class="bar-label">
+                                    <span>Current Revenue (Est.)</span>
+                                    <span id="currentRevLabel" style="color:#00ffcc;">$25,000</span>
+                                </div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill green" id="currentRevBar" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                            <div class="bar-container">
+                                <div class="bar-label">
+                                    <span>Potential (Including Leak)</span>
+                                    <span id="potentialRevLabel" style="color:var(--crimson-core);">$30,472</span>
+                                </div>
+                                <div class="bar-bg">
+                                    <div class="bar-fill green" id="greenBaseBar" style="width: 70%;"></div>
+                                    <div class="bar-fill red-overlay" id="leakRevBar" style="width: 100%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                <div style="margin-bottom:25px;">
-                    <label style="display:block; margin-bottom:8px; color:#888;">Average Job Value ($)</label>
-                    <input type="range" id="jobValue" min="100" max="5000" value="800" step="100">
-                    <p style="text-align:center; font-size:1.5rem; color: var(--neon-core); margin-top:10px;">$<span
-                            id="jobValueDisplay">800</span>/job</p>
+                    <div class="heat-map-container" style="background:var(--void-card); border:1px solid var(--glass-border); padding:30px; border-radius:16px; margin-top:30px;">
+                        <h3>Your "Red Zone" Blind Spot</h3>
+                        <p style="font-size:0.85rem; margin-bottom:15px; color:#888;">65% of high-value emergency calls happen when you're off the clock.</p>
+                        <div class="heat-map">
+                            <div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div>
+                            <div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div>
+                            <div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div>
+                            <div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div><div class="heat-cell"></div>
+                            <div class="heat-cell"></div>
+                            <div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div><div class="heat-cell red-zone"></div>
+                        </div>
+                        <div class="heat-labels">
+                            <span>12 AM</span>
+                            <span>6 AM</span>
+                            <span>12 PM</span>
+                            <span>6 PM</span>
+                            <span>11 PM</span>
+                        </div>
+                        <p style="color:var(--crimson-core); font-weight:bold; font-size:0.85rem; text-align:center; margin-top:15px; text-transform:uppercase;">Our AI owns the Red Zone.</p>
+                    </div>
                 </div>
+            </div>
 
-                <div
-                    style="background:rgba(255,68,68,0.1); border:1px solid #ff4444; border-radius:8px; padding:20px; text-align:center;">
-                    <p style="color:#888; margin-bottom:5px;">Estimated Monthly Revenue Leak:</p>
-                    <p style="font-size:2.5rem; color:#ff4444; font-weight:bold; margin:0;">$<span
-                            id="totalLoss">11,520</span></p>
-                    <p style="color:#888; font-size:0.9rem; margin-top:10px;">(Lost Traffic + Missed Calls)</p>
-                </div>
-
-                <div style="text-align:center; margin-top:25px;">
-                    <a href="intake.html" class="btn btn-primary btn-large pulse-btn">
-                        Plug My Revenue Leaks →
-                    </a>
-                </div>
+            <div style="text-align:center; margin-top:60px;">
+                <a href="intake.html" class="btn btn-primary btn-large pulse-btn">
+                    Stop the Leak Now →
+                </a>
             </div>
         </div>
     </section>
@@ -461,6 +485,113 @@
                     <h3>AI Phone Systems</h3>
                     <p>Never miss a lead. AI books jobs, qualifies prospects, and answer questions 24/7.</p>
                 </div>
+            </div>
+
+            <!-- AUDIO PROOF SECTION -->
+            <div style="margin-top:80px;">
+                <h2 style="text-align:center; margin-bottom:10px;">Hear the Proof</h2>
+                <p style="text-align:center; color:#888; margin-bottom:40px;">Our AI doesn't sound like a robot. It sounds like your best receptionist on their best day.</p>
+                
+                <div class="audio-grid">
+                    <div class="audio-card" id="audio-emergency">
+                        <div class="hud-scanner"></div>
+                        <div class="audio-header">
+                            <span class="audio-tag">The Emergency</span>
+                            <span style="font-size:0.8rem; color:#666;">0:20</span>
+                        </div>
+                        <h4 style="color:#fff; margin:5px 0;">2 AM Burst Pipe</h4>
+                        <div class="waveform-mock">
+                            <div class="waveform-bars">
+                                <!-- Generated bars -->
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:30%;"></div>
+                                <div class="wave-bar" style="height:80%;"></div>
+                                <div class="wave-bar" style="height:45%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                                <div class="wave-bar" style="height:20%;"></div>
+                                <div class="wave-bar" style="height:90%;"></div>
+                                <div class="wave-bar" style="height:55%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:30%;"></div>
+                                <div class="wave-bar" style="height:80%;"></div>
+                                <div class="wave-bar" style="height:45%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:15px;">
+                            <button class="play-btn" onclick="toggleAudio('emergency')">▶</button>
+                            <span style="font-size:0.85rem; color:#888;">AI identifies emergency & routes to technician.</span>
+                        </div>
+                        <audio id="audio-file-emergency" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio> <!-- Placeholder sound -->
+                    </div>
+
+                    <div class="audio-card" id="audio-quote">
+                        <div class="audio-header">
+                            <span class="audio-tag">The Quote</span>
+                            <span style="font-size:0.8rem; color:#666;">0:20</span>
+                        </div>
+                        <h4 style="color:#fff; margin:5px 0;">Hourly Rate Inquiry</h4>
+                        <div class="waveform-mock">
+                            <div class="waveform-bars">
+                                <div class="wave-bar" style="height:30%;"></div>
+                                <div class="wave-bar" style="height:50%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:85%;"></div>
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:50%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:85%;"></div>
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:50%;"></div>
+                                <div class="wave-bar" style="height:20%;"></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:15px;">
+                            <button class="play-btn" onclick="toggleAudio('quote')">▶</button>
+                            <span style="font-size:0.85rem; color:#888;">AI explains pricing & handles objections.</span>
+                        </div>
+                        <audio id="audio-file-quote" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+                    </div>
+
+                    <div class="audio-card" id="audio-followup">
+                        <div class="audio-header">
+                            <span class="audio-tag">The Follow-up</span>
+                            <span style="font-size:0.8rem; color:#666;">0:20</span>
+                        </div>
+                        <h4 style="color:#fff; margin:5px 0;">60s Missed Call Back</h4>
+                        <div class="waveform-mock">
+                            <div class="waveform-bars">
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:30%;"></div>
+                                <div class="wave-bar" style="height:80%;"></div>
+                                <div class="wave-bar" style="height:45%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                                <div class="wave-bar" style="height:20%;"></div>
+                                <div class="wave-bar" style="height:90%;"></div>
+                                <div class="wave-bar" style="height:55%;"></div>
+                                <div class="wave-bar" style="height:40%;"></div>
+                                <div class="wave-bar" style="height:60%;"></div>
+                                <div class="wave-bar" style="height:30%;"></div>
+                                <div class="wave-bar" style="height:80%;"></div>
+                                <div class="wave-bar" style="height:45%;"></div>
+                                <div class="wave-bar" style="height:70%;"></div>
+                                <div class="wave-bar" style="height:20%;"></div>
+                            </div>
+                        </div>
+                        <div style="display:flex; align-items:center; gap:15px;">
+                            <button class="play-btn" onclick="toggleAudio('followup')">▶</button>
+                            <span style="font-size:0.85rem; color:#888;">AI calls back instantly to win the job.</span>
+                        </div>
+                        <audio id="audio-file-followup" src="https://assets.mixkit.co/active_storage/sfx/2568/2568-preview.mp3"></audio>
+                    </div>
+                </div>
+            </div>
                 <div class="service-card">
                     <div class="service-icon">⚙️</div>
                     <h3>Automated Pipelines</h3>
@@ -483,8 +614,8 @@
                 </div>
 
                 <div
-                    style="background:rgba(0,255,163,0.05); border:1px solid var(--neon-core); border-radius:12px; padding:30px;">
-                    <h3 style="color: var(--neon-core); margin-bottom:20px;">✅ WITH CO-AI</h3>
+                    style="background:var(--crimson-dim); border:1px solid var(--crimson-core); border-radius:12px; padding:30px;">
+                    <h3 style="color: var(--crimson-core); margin-bottom:20px;">✅ WITH CO-AI</h3>
                     <ul style="color:#888; line-height:2; list-style:none; padding:0;">
                         <li>📞 Calls answered in &lt; 1 second</li>
                         <li>📅 AI books directly to your calendar</li>
@@ -504,23 +635,24 @@
             <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px;">
                 <div class="glass-card">
                     <p style="color:#fff; font-size:1.1rem; margin-bottom:20px; font-style:italic;">"I was missing 4-5
-                        calls a day during summer. The AI captured 12 jobs in the first month. Paid for itself 3x over."
+                        calls a day during summer. The AI captured 12 jobs in the first month. Paid for itself 3x over.
+                        You can't afford to miss calls when it's 110 degrees in Oildale."
                     </p>
-                    <p style="color: var(--neon-core); font-weight:bold; margin:0;">David T.</p>
+                    <p style="color: var(--crimson-core); font-weight:bold; margin:0;">David T.</p>
                     <p style="color:#666; font-size:14px;">Delano HVAC Solutions</p>
                 </div>
 
                 <div class="glass-card">
                     <p style="color:#fff; font-size:1.1rem; margin-bottom:20px; font-style:italic;">"Best investment
                         I've made. I'm actually able to eat dinner with my family without worrying about the phone."</p>
-                    <p style="color: var(--neon-core); font-weight:bold; margin:0;">Maria S.</p>
+                    <p style="color: var(--crimson-core); font-weight:bold; margin:0;">Maria S.</p>
                     <p style="color:#666; font-size:14px;">Shafter Plumbing Pros</p>
                 </div>
 
                 <div class="glass-card">
                     <p style="color:#fff; font-size:1.1rem; margin-bottom:20px; font-style:italic;">"Setup was easy. The
                         AI knows my services and prices. Customers think it's a real receptionist. Game changer."</p>
-                    <p style="color: var(--neon-core); font-weight:bold; margin:0;">James R.</p>
+                    <p style="color: var(--crimson-core); font-weight:bold; margin:0;">James R.</p>
                     <p style="color:#666; font-size:14px;">Kern County Electric</p>
                 </div>
             </div>
@@ -532,22 +664,25 @@
         <div class="container">
             <h2 style="text-align:center; margin-bottom:40px;">Kern County Service Areas</h2>
             <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
-                <div class="glass-card" style="padding: 25px;">
+                <div class="glass-card" style="padding: 25px; position:relative; overflow:hidden;">
+                    <div class="hud-scanner"></div>
                     <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">Bakersfield</h3>
                     <p style="font-size:0.9rem; margin-bottom:0;">Core systems, web design, and automation for primary
                         Bakersfield trades.</p>
                 </div>
-                <div class="glass-card" style="padding: 25px;">
+                <div class="glass-card" style="padding: 25px; position:relative; overflow:hidden;">
+                    <div class="hud-scanner"></div>
                     <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">Oildale & Rosedale</h3>
-                    <p style="font-size:0.9rem; margin-bottom:0;">AI phone dispatch and after-hours coverage for
-                        high-volume residential services.</p>
+                    <p style="font-size:0.9rem; margin-bottom:0;">We know those 110-degree July days when an HVAC guy is in an attic and can't answer his phone. AI dispatch that keeps you working while we handle the heat.</p>
                 </div>
-                <div class="glass-card" style="padding: 25px;">
+                <div class="glass-card" style="padding: 25px; position:relative; overflow:hidden;">
+                    <div class="hud-scanner"></div>
                     <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">Shafter & Wasco</h3>
                     <p style="font-size:0.9rem; margin-bottom:0;">Local lead capture funnels optimized for expanding
                         service areas.</p>
                 </div>
-                <div class="glass-card" style="padding: 25px;">
+                <div class="glass-card" style="padding: 25px; position:relative; overflow:hidden;">
+                    <div class="hud-scanner"></div>
                     <h3 style="color:#fff; font-size:1.2rem; margin-bottom:10px;">Delano</h3>
                     <p style="font-size:0.9rem; margin-bottom:0;">Bilingual AI voice agents and comprehensive CRM
                         routing.</p>
@@ -557,17 +692,20 @@
     </section>
 
     <!-- GUARANTEE SECTION -->
-    <section class="section" style="background:linear-gradient(135deg, rgba(0,255,163,0.05), transparent);">
+    <section class="section" style="background:linear-gradient(135deg, var(--crimson-dim), transparent);">
         <div class="container" style="text-align:center;">
             <div style="max-width:700px; margin:0 auto;">
                 <div style="font-size:64px; margin-bottom:20px;">🛡️</div>
-                <h2 style="margin-bottom:20px;">The Revenue Recovery Guarantee</h2>
+                <h2 style="margin-bottom:20px;">The Cipher Guarantee</h2>
                 <p style="font-size:1.25rem; color:#fff; margin-bottom:30px;">
-                    If we can't identify at least <span
-                        style="color: var(--neon-core); font-weight:bold;">$5,000/month</span> in recoverable revenue
-                    during your free audit, we won't even offer you our services.
+                    If our AI doesn't find at least <span
+                        style="color: var(--crimson-core); font-weight:bold;">$5,000/month</span> in leaked revenue 
+                    within your first 30 days, your next 6 months of service are completely free.
                 </p>
-                <a href="#audit-form" class="btn btn-primary btn-large pulse-btn">Claim My Free Audit</a>
+                <p style="color:#888; font-size:0.9rem; margin-bottom:30px;">
+                    That's not confidence. That's mathematical certainty.
+                </p>
+                <a href="intake.html" class="btn btn-primary btn-large pulse-btn">Claim My Free Audit</a>
             </div>
         </div>
     </section>
@@ -575,7 +713,7 @@
     <!-- Footer -->
     <footer>
         <div class="container" style="text-align:center;">
-            <p style="font-weight:700; color: var(--neon-core); margin-bottom:15px;">CHAOTICALLY ORGANIZED AI</p>
+            <p style="font-weight:700; color: var(--crimson-core); margin-bottom:15px;">CHAOTICALLY ORGANIZED AI</p>
             <p style="color:#888; line-height:1.8; margin-bottom:20px;">
                 📍 1712 19th St #216, Bakersfield, CA 93301<br>
                 📞 (661) 610-9198<br>
@@ -584,36 +722,6 @@
             <p style="font-size:0.9rem; color:#666;">
                 <a href="terms-of-service.html">Terms</a> |
                 <a href="privacy-policy.html">Privacy</a> |
-                <a href="contact.html">Contact</a> |
-                <a href="careers.html" style="color: var(--neon-core); font-weight:bold;">We're Hiring 🚀</a>
+                <a href="contact.html">Contact</a>
             </p>
             <p style="margin-top:20px; font-size:0.8rem; color:#444;">
-                © 2026 Chaotically Organized AI. Serving Kern County service businesses.
-            </p>
-        </div>
-    </footer>
-
-    <a href="tel:6616109198" class="floating-call pulse-btn" aria-label="Call Us Now">📞</a>
-
-    <!-- Exit Intent Popup -->
-    <div id="exit-popup" class="popup-overlay" style="display:none;">
-        <div class="popup-content">
-            <button class="popup-close" onclick="closeExitPopup()">×</button>
-            <h3>Wait! Before You Go...</h3>
-            <p>Don't leave money on the table. Get our free guide:</p>
-            <p style="color:#00e676; font-weight:bold;">"7 Revenue Leaks Costing Trade Businesses $10K+/Month"</p>
-            <a href="land.html" class="btn btn-primary" style="display:block; margin:20px 0;">Get Free Guide</a>
-            <p style="font-size:0.8rem;">Or <a href="tel:6616109198" style="color:#00e676;">call now: (661) 610-9198</a>
-            </p>
-        </div>
-    </div>
-
-    <!-- Social Proof Toast Notification -->
-    <div id="social-proof-toast" class="toast-notification" style="display:none;">
-        <span id="toast-message"></span>
-    </div>
-
-    <script src="script.js" defer></script>
-</body>
-
-</html>

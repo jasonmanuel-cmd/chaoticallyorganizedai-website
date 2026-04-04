@@ -185,9 +185,9 @@
   to = "/404.html"
   status = 404
 
-# FORMS - Ensure form submissions work
+# FORMS - Native Netlify Form Handling enabled for contact and revenue-audit
 [forms]
-  # Forms are handled by Formspree, no Netlify forms needed
+  filter = true
 
 # PLUGINS
 [[plugins]]

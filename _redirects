@@ -31,40 +31,57 @@ https://www.chaoticallyorganizedai.com/*  https://chaoticallyorganizedai.com/:sp
 # TRAILING SLASH NORMALIZATION
 /contact/    /contact.html    301!
 /about/      /index.html      301!
-/services/   /pricing.html    301!
+/services/   /index.html#audit-form    301!
 /blog/       /resources.html  301!
 
 # COMMON TYPO REDIRECTS
-/bakersfield-web-design      /index.html    301!
-/web-design-bakersfield      /index.html    301!
-/ai-phone-system             /voice-ai.html 301!
-/ai-receptionist             /voice-ai.html 301!
-/phone-answering             /voice-ai.html 301!
-/free-audit                  /intake.html   301!
-/audit                       /intake.html   301!
+/bakersfield-web-design      /index.html#audit-form    301!
+/web-design-bakersfield      /index.html#audit-form    301!
+/ai-phone-system             /index.html#audit-form    301!
+/ai-receptionist             /index.html#audit-form    301!
+/phone-answering             /index.html#audit-form    301!
+/free-audit                  /index.html#audit-form   301!
+/audit                       /index.html#audit-form   301!
 /quote                       /contact.html  301!
 /book                        /contact.html  301!
 
-# TRADE-SPECIFIC SHORT URLS
-/hvac     /hvac-phone-answering.html       301!
-/plumbing /plumbing-phone-answering.html   301!
-/electric /electrical-phone-answering.html 301!
-/roofing  /roofing-phone-answering.html    301!
-/moving   /moving-phone-answering.html     301!
+# ALL DELETED INDUSTRY PAGES -> REDIRECT TO AUDIT FORM
+/hvac-phone-answering.html     /index.html#audit-form   301!
+/hvac                          /index.html#audit-form   301!
+/plumbing-phone-answering.html /index.html#audit-form   301!
+/plumbing                      /index.html#audit-form   301!
+/electrical-phone-answering.html /index.html#audit-form 301!
+/electric                      /index.html#audit-form   301!
+/roofing-phone-answering.html  /index.html#audit-form   301!
+/roofing                      /index.html#audit-form   301!
+/contractors-phone-answering.html /index.html#audit-form 301!
+/moving-phone-answering.html   /index.html#audit-form   301!
+/moving                        /index.html#audit-form   301!
+/web-design-bakersfield.html   /index.html#audit-form   301!
+/website-design-delano.html    /index.html#audit-form   301!
+/delano                        /index.html#audit-form   301!
+/website-design-shafter.html   /index.html#audit-form   301!
+/shafter                       /index.html#audit-form   301!
+/website-design-wasco.html     /index.html#audit-form   301!
+/wasco                         /index.html#audit-form   301!
+/ai-phone-answering-bakersfield.html /index.html#audit-form 301!
+/automation-systems-bakersfield.html /index.html#audit-form 301!
+/complete-guide-missed-call-automation.html /index.html#audit-form 301!
+/seo-vs-geo-guide.html         /index.html#audit-form   301!
+/voice-ai.html                /index.html#audit-form   301!
+/industries.html              /index.html#audit-form   301!
+/systems-audit.html          /index.html#audit-form   301!
+/gel.html                     /index.html#audit-form   301!
+/dashboard.html               /index.html#audit-form   301!
+/venues.html                 /index.html#audit-form   301!
+/case-studies/*              /portfolio.html          301!
+/articles/*                  /resources.html          301!
 
-# CITY-SPECIFIC SHORT URLS
-/shafter  /website-design-shafter.html     301!
-/delano   /website-design-delano.html      301!
-/wasco    /website-design-wasco.html       301!
-
-# LANDING PAGE SHORT URL
-/guide    /land.html                       301!
-/download /land.html                       301!
-/free     /land.html                       301!
-
-# LEGACY / OLD URL REDIRECTS
-/old-contact.html    /contact.html    301!
-/old-services.html   /pricing.html    301!
+# LEGACY URLS
+/guide    /index.html#audit-form   301!
+/download /index.html#audit-form   301!
+/free     /index.html#audit-form   301!
+/land.html /index.html#audit-form 301!
 
 # CUSTOM 404 FALLBACK
 /*    /404.html    404

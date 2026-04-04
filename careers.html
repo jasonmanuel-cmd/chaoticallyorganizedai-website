@@ -25,14 +25,14 @@
         .lab-hero {
             text-align: center;
             padding: 80px 20px;
-            background: radial-gradient(circle at center, rgba(0, 255, 163, 0.1) 0%, transparent 60%);
+            background: radial-gradient(circle at center, var(--crimson-dim) 0%, transparent 60%);
         }
 
         .manifesto-box {
             max-width: 800px;
             margin: 0 auto;
             background: rgba(255, 255, 255, 0.03);
-            border-left: 4px solid var(--neon-core);
+            border-left: 4px solid var(--crimson-core);
             padding: 30px;
             text-align: left;
             font-size: 1.1rem;
@@ -50,13 +50,13 @@
         }
 
         .role-card:hover {
-            border-color: var(--neon-core);
+            border-color: var(--crimson-core);
             transform: translateX(5px);
         }
 
         .role-tag {
-            background: rgba(0, 255, 163, 0.1);
-            color: var(--neon-core);
+            background: var(--crimson-dim);
+            color: var(--crimson-core);
             padding: 4px 10px;
             font-size: 0.8rem;
             text-transform: uppercase;
@@ -106,7 +106,7 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                
                 autoDisplay: false
             }, 'google_translate_element');
         }
@@ -138,7 +138,7 @@
 
 <body>
 
-            <header>
+                <header>
         <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
@@ -147,10 +147,7 @@
             <div class="nav-main">
                 <ul class="nav-links" role="menubar">
                     <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
-                    <li><a href="careers.html" class="active" role="menuitem" tabindex="0">Careers</a></li>
-                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Proof</a></li>
                     <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
                 </ul>
                 <div class="lang-switcher">
@@ -160,7 +157,7 @@
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
             </div>
             <div id="google_translate_element"></div>
             <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
@@ -277,7 +274,7 @@
 
     <footer>
         <div class="container" style="text-align: center;">
-            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+            <p style="font-weight: 700; color: var(--crimson-core); margin-bottom: 15px; letter-spacing: 1px;">
                 CHAOTICALLY ORGANIZED AI
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">

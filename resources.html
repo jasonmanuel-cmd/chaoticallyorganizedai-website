@@ -43,7 +43,7 @@
             right: 20px;
             width: 60px;
             height: 60px;
-            background: var(--neon-core);
+            background: var(--crimson-core);
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -68,7 +68,7 @@
 
         .gated-form {
             background: var(--void-card);
-            border: 1px solid var(--neon-core);
+            border: 1px solid var(--crimson-core);
             padding: 20px;
             border-radius: 8px;
             margin-top: 15px;
@@ -88,7 +88,7 @@
         .gated-form button {
             width: 100%;
             padding: 12px;
-            background: var(--neon-core);
+            background: var(--crimson-core);
             color: #000;
             border: none;
             font-weight: bold;
@@ -105,9 +105,9 @@
         }
 
         .resource-card:hover {
-            border-color: var(--neon-core);
+            border-color: var(--crimson-core);
             transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 255, 163, 0.15);
+            box-shadow: 0 10px 40px var(--crimson-dim);
         }
 
         .calculator-box {
@@ -143,7 +143,7 @@
 
         .calc-result-box {
             background: rgba(0, 230, 118, 0.05);
-            border: 1px solid var(--neon-core);
+            border: 1px solid var(--crimson-core);
             border-radius: 8px;
             padding: 20px;
             text-align: center;
@@ -157,7 +157,7 @@
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
                 includedLanguages: 'es',
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+                
                 autoDisplay: false
             }, 'google_translate_element');
         }
@@ -189,7 +189,7 @@
 
 <body>
 
-        <header>
+            <header>
         <div class="nav-container" role="navigation" aria-label="Main Navigation">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
@@ -198,10 +198,7 @@
             <div class="nav-main">
                 <ul class="nav-links" role="menubar">
                     <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
-                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
-                    <li><a href="resources.html" class="active" role="menuitem" tabindex="0">Resources</a></li>
+                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Proof</a></li>
                     <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
                 </ul>
                 <div class="lang-switcher">
@@ -211,7 +208,7 @@
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="intake.html" class="btn btn-primary header-cta" tabindex="0">Get Free Audit</a>
+                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
             </div>
             <div id="google_translate_element"></div>
             <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
@@ -252,7 +249,7 @@
 
                 <!-- Calculator Body -->
                 <div id="calcBody" style="display:none;">
-                    <h3 style="margin-bottom:20px; color:var(--neon-core);">Your Metrics</h3>
+                    <h3 style="margin-bottom:20px; color:var(--crimson-core);">Your Metrics</h3>
                     <div class="calc-row">
                         <div>
                             <label style="color:#888; margin-bottom:5px; display:block;">Monthly Website
@@ -313,7 +310,7 @@
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px;">
 
                 <div class="resource-card">
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">7 Revenue Leaks Costing Local Businesses
+                    <h3 style="color: var(--crimson-core); margin-bottom: 15px;">7 Revenue Leaks Costing Local Businesses
                         $10K+/Month</h3>
                     <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
                         Our complete teardown of the hidden gaps in websites, CRMs, and phones that bleed cash.
@@ -330,7 +327,7 @@
                 </div>
 
                 <div class="resource-card">
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">The Complete Guide to AI Phone Answering
+                    <h3 style="color: var(--crimson-core); margin-bottom: 15px;">The Complete Guide to AI Phone Answering
                     </h3>
                     <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
                         How to deploy voice AI agents for trades and service businesses to book jobs 24/7.
@@ -347,7 +344,7 @@
                 </div>
 
                 <div class="resource-card" id="teardown">
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">Website Conversion Tear-Down</h3>
+                    <h3 style="color: var(--crimson-core); margin-bottom: 15px;">Website Conversion Tear-Down</h3>
                     <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
                         Submit your URL and we'll send you a 5-10 minute video breakdown of your site's conversion
                         leaks.
@@ -365,7 +362,7 @@
                 </div>
 
                 <div class="resource-card">
-                    <h3 style="color: var(--neon-core); margin-bottom: 15px;">SEO vs GEO vs AEO: Website Survival Guide
+                    <h3 style="color: var(--crimson-core); margin-bottom: 15px;">SEO vs GEO vs AEO: Website Survival Guide
                     </h3>
                     <p style="margin-bottom: 20px; line-height: 1.7; color:#888;">
                         Learn how to format your site architecture and content so LLMs (ChatGPT, Perplexity) recommend
@@ -425,7 +422,7 @@
 
     <footer>
         <div class="container" style="text-align: center;">
-            <p style="font-weight: 700; color: var(--neon-core); margin-bottom: 15px; letter-spacing: 1px;">
+            <p style="font-weight: 700; color: var(--crimson-core); margin-bottom: 15px; letter-spacing: 1px;">
                 CHAOTICALLY ORGANIZED AI
             </p>
             <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">

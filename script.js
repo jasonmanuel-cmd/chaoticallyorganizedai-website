@@ -1,3 +1,109 @@
+// --- GOD-LEVEL SYNTHETIC SOUND ENGINE ---
+class NeuralSound {
+    constructor() {
+        this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+    }
+
+    // High-end UI "Tick" for sliders
+    tick() {
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(10, this.ctx.currentTime + 0.05);
+        gain.gain.setValueAtTime(0.01, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.05);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.05);
+    }
+
+    // Success Bloom for clicking buttons
+    bloom() {
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(440, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(880, this.ctx.currentTime + 0.2);
+        gain.gain.setValueAtTime(0.02, this.ctx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, this.ctx.currentTime + 0.2);
+        osc.connect(gain);
+        gain.connect(this.ctx.destination);
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.2);
+    }
+}
+
+const AudioUI = new NeuralSound();
+
+// Custom Cursor Initialization
+function initCustomCursor() {
+    const dot = document.createElement('div');
+    const ring = document.createElement('div');
+    dot.className = 'custom-cursor';
+    ring.className = 'cursor-follower';
+    document.body.appendChild(dot);
+    document.body.appendChild(ring);
+
+    const thinkingNode = document.createElement('div');
+    thinkingNode.className = 'thinking-node';
+    document.body.appendChild(thinkingNode);
+
+    document.addEventListener('mousemove', (e) => {
+        dot.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
+        ring.style.transform = `translate(${e.clientX - 16}px, ${e.clientY - 16}px)`;
+    });
+
+    const activeElements = 'a, button, input, select, textarea, .audio-card';
+    document.querySelectorAll(activeElements).forEach(el => {
+        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+        el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
+        el.addEventListener('click', () => AudioUI.bloom());
+    });
+}
+
+// Live Response Trigger - Speed Test Function
+function initiateSpeedTest() {
+    const phoneNumber = document.getElementById('speedTestNumber').value;
+    const resultDiv = document.getElementById('speedTestResult');
+    const resultText = resultDiv.querySelector('p');
+    
+    if (!phoneNumber || phoneNumber.length < 10) {
+        resultText.textContent = 'Please enter a valid phone number';
+        resultText.style.color = '#ff4444';
+        resultDiv.style.display = 'block';
+        return;
+    }
+    
+    // Start timing
+    const startTime = performance.now();
+    
+    // Show countdown
+    resultText.textContent = 'Calling in 3...';
+    resultText.style.color = 'var(--crimson-core)';
+    resultDiv.style.display = 'block';
+    
+    // Simulate the 3-second call initiation
+    setTimeout(() => {
+        const endTime = performance.now();
+        const callTime = ((endTime - startTime) / 1000).toFixed(2);
+        
+        resultText.innerHTML = `⚡ Call initiated in ${callTime} seconds<br>Your phone should be ringing now.<br><small>If not, your first month is FREE.</small>`;
+        resultText.style.color = 'var(--crimson-core)';
+        
+        // Track the speed test
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'speed_test_completed', {
+                'phone_length': phoneNumber.length,
+                'call_time': callTime
+            });
+        }
+    }, 3000);
+}
+
 const GA_MEASUREMENT_ID = 'G-ZYCPQEBGTN';
 const ATTRIBUTION_KEYS = [
     'utm_source',
@@ -157,32 +263,68 @@ function setFormAttribution(form) {
 }
 
 function updateCalculator() {
-    const trafficInput = document.getElementById('webTraffic');
-    const convRateInput = document.getElementById('convRate');
     const missedCallsInput = document.getElementById('missedCalls');
     const jobValueInput = document.getElementById('jobValue');
+    const closeRateInput = document.getElementById('closeRate');
 
-    if (!trafficInput || !convRateInput || !missedCallsInput || !jobValueInput) return;
+    if (!missedCallsInput || !jobValueInput || !closeRateInput) return;
 
-    const traffic = parseFloat(trafficInput.value) || 0;
-    const currentCR = parseFloat(convRateInput.value) || 0;
     const missed = parseInt(missedCallsInput.value, 10) || 0;
     const value = parseInt(jobValueInput.value, 10) || 0;
+    const closeRate = (parseInt(closeRateInput.value, 10) || 0) / 100;
 
     const missedValueSpan = document.getElementById('missedValue');
     const jobValueDisplay = document.getElementById('jobValueDisplay');
-    const totalLossSpan = document.getElementById('totalLoss');
+    const closeRateValue = document.getElementById('closeRateValue');
+    const totalLossSpan = document.getElementById('revenue-leak');
 
     if (missedValueSpan) missedValueSpan.textContent = missed;
-    if (jobValueDisplay) jobValueDisplay.textContent = value;
+    if (jobValueDisplay) jobValueDisplay.textContent = value.toLocaleString();
+    if (closeRateValue) closeRateValue.textContent = Math.round(closeRate * 100);
 
-    const targetCR = 5.0;
-    const diffCR = Math.max(0, targetCR - currentCR);
-    const webRevenueLeak = Math.round(traffic * (diffCR / 100) * value);
-    const phoneRevenueLeak = Math.round(missed * 0.3 * 22 * value);
-    const totalMonthlyLoss = webRevenueLeak + phoneRevenueLeak;
+    // Formula: (Missed Calls * Job Value * 30.4) * Close Rate = Monthly Leak
+    const totalMonthlyLoss = Math.round((missed * value * 30.4) * closeRate);
 
-    if (totalLossSpan) totalLossSpan.textContent = totalMonthlyLoss.toLocaleString();
+    if (totalLossSpan) {
+        totalLossSpan.textContent = totalMonthlyLoss.toLocaleString();
+        
+        // Auditory Feedback
+        AudioUI.tick();
+
+        // Thinking Pulse Animation
+        document.body.classList.add('thinking');
+        clearTimeout(window.thinkTimeout);
+        window.thinkTimeout = setTimeout(() => {
+            document.body.classList.remove('thinking');
+        }, 500);
+
+        // God-Level Glow Transition
+        const parentContainer = totalLossSpan.parentElement.parentElement;
+        if (totalMonthlyLoss > 10000) {
+            parentContainer.classList.add('high-leak');
+        } else {
+            parentContainer.classList.remove('high-leak');
+        }
+    }
+
+    // Update Pain Graphic
+    const currentRev = value * 25; // Estimated baseline
+    const potentialRev = currentRev + totalMonthlyLoss;
+
+    const currentRevLabel = document.getElementById('currentRevLabel');
+    const potentialRevLabel = document.getElementById('potentialRevLabel');
+    const currentRevBar = document.getElementById('currentRevBar');
+    const greenBaseBar = document.getElementById('greenBaseBar');
+    const leakRevBar = document.getElementById('leakRevBar');
+
+    if (currentRevLabel) currentRevLabel.textContent = '$' + currentRev.toLocaleString();
+    if (potentialRevLabel) potentialRevLabel.textContent = '$' + potentialRev.toLocaleString();
+
+    if (currentRevBar) {
+        const currentPct = (currentRev / potentialRev) * 100;
+        currentRevBar.style.width = currentPct + '%';
+        if (greenBaseBar) greenBaseBar.style.width = currentPct + '%';
+    }
 }
 
 function trackScrollDepth() {
@@ -259,11 +401,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const inputs = ['webTraffic', 'convRate', 'missedCalls', 'jobValue'];
+    const inputs = ['missedCalls', 'jobValue', 'closeRate'];
     inputs.forEach((id) => {
         const el = document.getElementById(id);
         if (el) el.addEventListener('input', updateCalculator);
     });
+
+    // Initial calculation
+    updateCalculator();
 
     document.querySelectorAll('a[href*="intake.html"], a[href^="tel:"], a[href^="mailto:"]').forEach((btn) => {
         btn.addEventListener('click', function () {
@@ -386,31 +531,6 @@ function markUserConverted() {
     safeSessionSet('user_converted', 'true');
 }
 
-// Show exit intent popup
-function showExitPopup() {
-    const popup = document.getElementById('exit-popup');
-    if (popup && !safeSessionGet('exit_popup_shown')) {
-        popup.style.display = 'flex';
-        safeSessionSet('exit_popup_shown', 'true');
-
-        // Track in GA4
-        if (typeof gtag !== 'undefined') {
-            gtag('event', 'exit_intent_popup', {
-                'event_category': 'engagement',
-                'page': window.location.pathname
-            });
-        }
-    }
-}
-
-// Close exit intent popup
-function closeExitPopup() {
-    const popup = document.getElementById('exit-popup');
-    if (popup) {
-        popup.style.display = 'none';
-    }
-}
-
 // Show social proof toast notification
 function showSocialProofToast() {
     // Don't show if user has converted
@@ -452,7 +572,7 @@ function hideSocialProofToast() {
     }
 }
 
-// Initialize exit intent and social proof on DOM ready
+// Initialize social proof on DOM ready
 function initExitIntentAndSocialProof() {
     // Only run on index.html (homepage)
     if (!window.location.pathname.endsWith('index.html') &&
@@ -460,39 +580,6 @@ function initExitIntentAndSocialProof() {
         window.location.pathname !== '/') {
         return;
     }
-
-    // Skip if popup already shown
-    if (safeSessionGet('exit_popup_shown')) return;
-
-    // Desktop: Exit intent detection (mouse leaves viewport)
-    let exitIntentFired = false;
-    document.addEventListener('mouseleave', (e) => {
-        if (e.clientY <= 0 && !exitIntentFired) {
-            exitIntentFired = true;
-            showExitPopup();
-        }
-    });
-
-    // Mobile: Scroll-to-top detection
-    let lastScrollTop = 0;
-    let hasScrolledDown = false;
-
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-        // Track if user has scrolled down significantly
-        if (scrollTop > 300) {
-            hasScrolledDown = true;
-        }
-
-        // If user scrolls up after being down, trigger popup
-        if (hasScrolledDown && scrollTop < lastScrollTop && scrollTop < 100) {
-            showExitPopup();
-            hasScrolledDown = false; // Only trigger once
-        }
-
-        lastScrollTop = scrollTop;
-    }, { passive: true });
 
     // Start social proof notifications after 10 seconds
     setTimeout(() => {
@@ -511,16 +598,33 @@ function initExitIntentAndSocialProof() {
    ============================================ */
 
 function toggleLanguage() {
-    const currentLang = document.cookie.match(/googtrans=\/en\/([^;]+)/)?.[1] || 'en';
+    // Determine target based on UI state or localStorage
+    const currentLang = localStorage.getItem('user_requested_lang') || 'en';
     const targetLang = (currentLang === 'es') ? 'en' : 'es';
     
-    const select = document.querySelector('.goog-te-combo');
-    if (select) {
-        select.value = '/en/' + targetLang;
-        select.dispatchEvent(new Event('change'));
-        updateLangUI(targetLang);
-    } else {
-        console.warn('Google Translate not loaded yet.');
+    // 1. Store preference immediately
+    localStorage.setItem('user_requested_lang', targetLang);
+    updateLangUI(targetLang);
+
+    // 2. Set the cookie
+    setGoogtransCookie(targetLang);
+    
+    // 3. Reliable switch requires a reload for Google Translate to pick up the change
+    location.reload();
+}
+
+function setGoogtransCookie(lang) {
+    const val = (lang === 'es') ? '/en/es' : '/en/en';
+    const domain = window.location.hostname;
+    const expires = 'path=/;';
+    
+    // Set for current domain
+    document.cookie = `googtrans=${val}; ${expires}`;
+    
+    // Also set for domain variations to cover all bases
+    if (domain && domain !== 'localhost' && !domain.match(/^\d/)) {
+        document.cookie = `googtrans=${val}; ${expires} domain=${domain};`;
+        document.cookie = `googtrans=${val}; ${expires} domain=.${domain};`;
     }
 }
 
@@ -539,8 +643,145 @@ function updateLangUI(lang) {
 
 // Initial UI sync
 document.addEventListener('DOMContentLoaded', () => {
+    // On load, ensure cookie matches localStorage preference
+    const storedLang = localStorage.getItem('user_requested_lang') || 'en';
+    
+    // Check if current cookie matches
+    const currentCookie = document.cookie.match(/googtrans=\/en\/([^;]+)/);
+    const cookieLang = currentCookie ? currentCookie[1] : 'en';
+
+    if (storedLang !== cookieLang) {
+        setGoogtransCookie(storedLang);
+        // If we just had to set the cookie, we might need a reload, 
+        // but only if Google Translate hasn't already done its work.
+        // For now, let's just sync the UI.
+    }
+    
+    const syncUI = () => {
+        const isES = document.cookie.indexOf('googtrans=/en/es') !== -1;
+        updateLangUI(isES ? 'es' : 'en');
+    };
+    
+    syncUI();
+    setTimeout(syncUI, 500);
+});
+/* --- AUDIO PLAYER CONTROL --- */
+function toggleAudio(type) {
+    const card = document.getElementById(`audio-${type}`);
+    const audio = document.getElementById(`audio-file-${type}`);
+    const btn = card.querySelector('.play-btn');
+
+    if (!audio) return;
+
+    if (audio.paused) {
+        // Pause all other audios first
+        document.querySelectorAll('audio').forEach(a => {
+            a.pause();
+            a.currentTime = 0;
+        });
+        document.querySelectorAll('.audio-card').forEach(c => c.classList.remove('playing'));
+        document.querySelectorAll('.play-btn').forEach(b => b.textContent = '▶');
+
+        audio.play();
+        card.classList.add('playing');
+        btn.textContent = '⏸';
+    } else {
+        audio.pause();
+        card.classList.remove('playing');
+        btn.textContent = '▶';
+    }
+
+    audio.onended = () => {
+        card.classList.remove('playing');
+        btn.textContent = '▶';
+    };
+}
+
+/* --- MULTI-STEP FORM LOGIC --- */
+let currentStep = 1;
+
+function nextStep(step) {
+    const totalSteps = 4;
+    const currentFormStep = document.getElementById(`step-${currentStep}`);
+    
+    // Simple Validation
+    const inputs = currentFormStep.querySelectorAll('input[required], select[required]');
+    let valid = true;
+    inputs.forEach(input => {
+        if (!input.value) {
+            valid = false;
+            input.style.borderColor = 'var(--crimson-core)';
+        } else {
+            input.style.borderColor = 'var(--glass-border)';
+        }
+    });
+
+    if (!valid) return;
+
+    // Logic: Filter out "1 truck" and "0 missed calls" (Step 1 & 2 check)
+    if (currentStep === 1) {
+        const trucks = document.getElementById('truckCount').value;
+        if (trucks === '1') {
+            showNoFit('It looks like you\'re just getting started. Our systems are currently optimized for fleets of 2+ trucks. Keep growing and check back soon!');
+            return;
+        }
+    }
+
+    if (currentStep === 2) {
+        const bottleneck = document.getElementById('bottleneck').value;
+        if (bottleneck === 'none') {
+             showNoFit('If you have 0 bottlenecks, you might already be at peak efficiency! Our AI thrives on fixing systems that are currently leaking.');
+             return;
+        }
+    }
+
+    currentFormStep.classList.remove('active');
+    currentStep = step;
+    const nextFormStep = document.getElementById(`step-${currentStep}`);
+    if (nextFormStep) nextFormStep.classList.add('active');
+    
+    updateStepIndicators();
+}
+
+function prevStep(step) {
+    const currentFormStep = document.getElementById(`step-${currentStep}`);
+    currentFormStep.classList.remove('active');
+    currentStep = step;
+    const nextFormStep = document.getElementById(`step-${currentStep}`);
+    if (nextFormStep) nextFormStep.classList.add('active');
+    
+    updateStepIndicators();
+}
+
+function updateStepIndicators() {
+    document.querySelectorAll('.indicator-dot').forEach((dot, index) => {
+        if (index + 1 <= currentStep) {
+            dot.classList.add('active');
+        } else {
+            dot.classList.remove('active');
+        }
+    });
+}
+
+function showNoFit(message) {
+    const container = document.querySelector('.step-form-container');
+    container.innerHTML = `
+        <div class="no-fit-message">
+            <h3 style="color:var(--crimson-core);">We aren't a fit yet.</h3>
+            <p style="color:#fff; margin:20px 0;">${message}</p>
+            <a href="index.html" class="btn">Return Home</a>
+        </div>
+    `;
+}
+
+// Initialize God-Tier Systems
+initCustomCursor();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Reveal everything after short delay to feel elite
+    document.body.style.opacity = '0';
     setTimeout(() => {
-        const currentLang = document.cookie.match(/googtrans=\/en\/([^;]+)/)?.[1] || 'en';
-        updateLangUI(currentLang);
-    }, 1500);
+        document.body.style.transition = 'opacity 1s';
+        document.body.style.opacity = '1';
+    }, 100);
 });
