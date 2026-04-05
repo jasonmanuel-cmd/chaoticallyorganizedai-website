@@ -1,0 +1,78 @@
+/* ============================================================
+   INTRO FLASH PAGE — CHAOTICALLY ORGANIZED AI
+   ============================================================ */
+
+#intro-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: #000;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: opacity 1.5s cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+.intro-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+#intro-logo {
+    width: 320px;
+    height: auto;
+    opacity: 0;
+    transform: scale(0.9);
+    filter: drop-shadow(0 0 20px rgba(0, 255, 204, 0.4));
+    animation: introFadeIn 1s forwards ease-out;
+}
+
+@keyframes introFadeIn {
+    to { opacity: 1; transform: scale(1); }
+}
+
+#intro-canvas {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 5;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+#intro-overlay.coding #intro-canvas {
+    opacity: 1;
+}
+
+#intro-overlay.coding #intro-logo {
+    opacity: 0;
+    transition: opacity 0.8s;
+}
+
+#intro-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Moving Background for site */
+.animated-space-bg {
+    position: fixed;
+    top: -5%; left: -5%;
+    width: 110%; height: 110%;
+    background-image: url('assets/images/space-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    z-index: -2;
+    animation: spaceMove 60s linear infinite alternate;
+}
+
+@keyframes spaceMove {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(-2%, -2%) scale(1.05); }
+}

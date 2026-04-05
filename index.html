@@ -89,6 +89,8 @@
 
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <script src="intro.js" defer></script>
 
     <!-- Facebook Pixel -->
     <script defer>
@@ -103,9 +105,133 @@
             s.parentNode.insertBefore(t, s)
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '851220487780130');
+        fbq('init', '1035251431143891');
         fbq('track', 'PageView');
     </script>
+    <noscript><img height="1" width="1" style="display:none"
+            src="https://www.facebook.com/tr?id=1035251431143891&ev=PageView&noscript=1" alt="Facebook Pixel" /></noscript>
+
+    <!-- STRUCTURED DATA: GEO / AEO / SGE OPTIMIZATION -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "Chaotically Organized AI",
+      "alternateName": "COAI",
+      "url": "https://chaoticallyorganizedai.com/",
+      "logo": "https://chaoticallyorganizedai.com/logo.png",
+      "image": "https://chaoticallyorganizedai.com/og-image.jpg",
+      "description": "Premium Website Design, AI Automation, and AI Phone Answering for Bakersfield service businesses and trades.",
+      "telephone": "+1-661-610-9198",
+      "email": "chaoticallyorganizedai@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "1712 19th St #216",
+        "addressLocality": "Bakersfield",
+        "addressRegion": "CA",
+        "postalCode": "93301",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.373291,
+        "longitude": -119.018712
+      },
+      "areaServed": [
+        {
+          "@type": "City",
+          "name": "Bakersfield"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Kern County"
+        }
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Services",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "Website Design",
+              "description": "High-converting, SEO-optimized websites for local businesses."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "AI Phone Answering",
+              "description": "AI-powered phone reception that books jobs and captures leads 24/7."
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Business Automation",
+              "description": "Custom CRM and backend systems to automate business workflows."
+            }
+          }
+        ]
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/chaoticallyorganizedai",
+        "https://www.instagram.com/chaoticallyorganizedai"
+      ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much does a custom website cost in Bakersfield?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom website projects typically start with a strategic audit. Pricing varies based on complexity, but we focus on ROI-driven designs that pay for themselves through increased lead conversion."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is AI Phone Answering and how does it work?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "AI Phone Answering captures every missed call for your business, answers questions, and can even schedule appointments directly into your calendar, ensuring you never lose revenue to a voicemail."
+          }
+        },
+        {
+            "@type": "Question",
+            "name": "What industries do you specialize in?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We specialize in service-based industries in Kern County, including HVAC, plumbing, electrical, construction, and legal services where lead response speed is critical."
+            }
+          }
+      ]
+    }
+    </script>
+</head>
 
     <!-- Google Translate API -->
     <script type="text/javascript">
@@ -172,9 +298,19 @@
 </head>
 
 <body class="home-page dark-mode">
-    <div class="neural-pulse-bg">
-        <div class="neural-grid"></div>
+    <!-- FLASH INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-content">
+            <img src="assets/images/intro-logo.png" alt="Chaotically Organized AI Logo" id="intro-logo">
+        </div>
     </div>
+
+    <!-- MOVING SPACE BACKGROUND -->
+    <div class="animated-space-bg"></div>
+
+    <div class="neutral-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4); z-index:-1; pointer-events:none;"></div>
+
 
     <!-- FLOATING PARTICLES -->
     <div class="particles-container" id="particles"></div>
@@ -218,10 +354,8 @@
     </header>
 
     <!-- ======== HERO SECTION ======== -->
-    <section class="hero-new" id="hero">
-        <div class="hero-orb hero-orb-1"></div>
-        <div class="hero-orb hero-orb-2"></div>
-        <div class="hero-orb hero-orb-3"></div>
+    <section class="hero-new" id="hero" style="background: transparent;">
+
 
         <div class="container hero-flex-new">
             <div class="hero-content-new reveal">

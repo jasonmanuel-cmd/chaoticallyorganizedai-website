@@ -24,6 +24,9 @@
     <meta property="twitter:description" content="Privacy policy for MCTB app and AI phone system. How we collect, use, and protect your data." />
     <meta property="twitter:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <script src="intro.js" defer></script>
     <style>
         @media screen and (max-width: 768px) { .container { width: 90% !important; padding: 0 15px !important; } .menu-toggle { display: block !important; } .glass-card { padding:20px !important } }
         .policy-section { margin: 30px 0; }
@@ -95,41 +98,58 @@ src="https://www.facebook.com/tr?id=851220487780130&ev=PageView&noscript=1"
         }
     </style>
 </head>
-<body>
-                <header>
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+<body class="legal-page dark-mode">
+    <!-- FLASH INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-content">
+            <img src="assets/images/intro-logo.png" alt="Chaotically Organized AI Logo" id="intro-logo">
+        </div>
+    </div>
+
+    <!-- MOVING SPACE BACKGROUND -->
+    <div class="animated-space-bg"></div>
+
+    <div class="neutral-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:-1; pointer-events:none;"></div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <header id="main-header">
+        <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <div class="nav-main">
-                <ul class="nav-links" role="menubar">
-                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
-                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
-                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
-                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+
+            <nav class="nav-main" role="navigation" aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="services.html" id="nav-services">Services</a></li>
+                    <li><a href="portfolio.html" id="nav-portfolio">Our Work</a></li>
+                    <li><a href="pricing.html" id="nav-pricing">Pricing</a></li>
+                    <li><a href="resources.html" id="nav-resources">Resources</a></li>
+                    <li><a href="contact.html" id="nav-contact">Contact</a></li>
                 </ul>
+
                 <div class="lang-switcher">
-                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                    <button id="lang-toggle" class="btn-lang is-en" onclick="toggleLanguage()" aria-label="Switch language">
                         <span class="lang-en">EN</span>
-                        <span class="lang-divider">/</span>
+                        <span class="lang-divider">|</span>
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
-            </div>
-            <div id="google_translate_element"></div>
-            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+
+                <a href="intake.html" class="btn btn-primary header-cta" id="nav-cta">Get Free Audit</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
         </div>
     </header>
 
-    <section class="section">
+    <section class="section" style="padding-top:150px;">
         <div class="container">
             <div class="glass-card">
-                <h1>Privacy Policy</h1>
+                <h1 class="hero-h1" style="font-size: 3rem; margin-bottom: 10px;">Privacy <span class="gradient-text">Policy</span></h1>
                 <p class="last-updated">Last Updated: January 2026</p>
+
 
                 <p>At Chaotically Organized AI, we take your privacy seriously. This policy explains how we collect, use, and protect your personal information when you use our MCTB app, full AI phone system, and website.</p>
 
@@ -306,14 +326,56 @@ src="https://www.facebook.com/tr?id=851220487780130&ev=PageView&noscript=1"
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2026 Chaotically Organized AI. All rights reserved. | <a href="privacy-policy.html" style="color:var(--neon-bright)">Privacy Policy</a> | <a href="terms-of-service.html" style="color:var(--neon-bright)">Terms of Service</a></p>
+    <!-- ======== FOOTER ======== -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <p style="font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 10px;">CHAOTICALLY ORGANIZED AI</p>
+                <p class="footer-tagline">Making Kern County Businesses Unstoppable through AI & Automation.</p>
+                <div class="footer-contact">
+                    <p>📍 1712 19th St #216, Bakersfield, CA 93301</p>
+                    <p>📞 <a href="tel:6616109198">(661) 610-9198</a></p>
+                    <p>✉️ <a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <p class="footer-col-title">Services</p>
+                <ul class="footer-links">
+                    <li><a href="services.html">Website Design</a></li>
+                    <li><a href="services.html">AI Phone Answering</a></li>
+                    <li><a href="services.html">Business Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <p class="footer-col-title">Company</p>
+                <ul class="footer-links">
+                    <li><a href="portfolio.html">Our Work</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-cta-col">
+                <p class="footer-col-title">Get Started</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted2); margin-bottom: 15px;">Free 20-minute consultation. No commitment.</p>
+                <a href="intake.html" class="btn btn-primary pulse-btn" style="width: 100%; text-align: center; border-radius: 8px;">Claim My Audit</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p style="font-size: 0.8rem; color: #444;">© 2026 Chaotically Organized AI. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <span>•</span>
+                <a href="terms-of-service.html">Terms</a>
+                <span>•</span>
+                <a href="sitemap.xml">Sitemap</a>
+            </div>
         </div>
     </footer>
-    <script>
-        document.querySelector('.menu-toggle').addEventListener('click', () => { document.querySelector('.nav-links').classList.toggle('active'); });
-    </script>
-<script src="script.js" defer></script>
+
+    <script src="script.js" defer></script>
 </body>
 </html>

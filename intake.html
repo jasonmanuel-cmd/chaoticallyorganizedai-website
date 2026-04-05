@@ -6,32 +6,86 @@
     <title>Revenue Recovery Audit | Chaotically Organized AI</title>
     <meta name="description" content="Take the Revenue Recovery Audit to identify exactly where your business is leaking money.">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <script src="intro.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <!-- STRUCTURED DATA: GEO / AEO / SGE OPTIMIZATION -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://chaoticallyorganizedai.com/"
+      },{
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Revenue Audit",
+        "item": "https://chaoticallyorganizedai.com/intake.html"
+      }]
+    }
+    </script>
 </head>
 <body class="intake-page dark-mode">
-    <div class="neural-pulse-bg">
-        <div class="neural-grid"></div>
+    <!-- FLASH INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-content">
+            <img src="assets/images/intro-logo.png" alt="Chaotically Organized AI Logo" id="intro-logo">
+        </div>
     </div>
 
-    <nav class="navbar glass">
-        <div class="nav-container">
-            <a href="index.html" class="logo">CHAOTICALLY<span>ORGANIZED</span></a>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="portfolio.html">Portfolio</a>
-            </div>
-        </div>
-    </nav>
+    <!-- MOVING SPACE BACKGROUND -->
+    <div class="animated-space-bg"></div>
 
-    <main class="intake-main">
-        <section class="form-hero">
-            <div class="container animate-up">
-                <h1 class="glitch-text" data-text="DIAGNOSTIC">DIAGNOSTIC</h1>
-                <p class="subtitle">Identify the leak. Plug the hole. Recover the revenue.</p>
+    <div class="neutral-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:-1; pointer-events:none;"></div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <header id="main-header">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
+                <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
+            </a>
+
+            <nav class="nav-main" role="navigation" aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="services.html" id="nav-services">Services</a></li>
+                    <li><a href="portfolio.html" id="nav-portfolio">Our Work</a></li>
+                    <li><a href="pricing.html" id="nav-pricing">Pricing</a></li>
+                    <li><a href="resources.html" id="nav-resources">Resources</a></li>
+                    <li><a href="contact.html" id="nav-contact">Contact</a></li>
+                </ul>
+
+                <div class="lang-switcher">
+                    <button id="lang-toggle" class="btn-lang is-en" onclick="toggleLanguage()" aria-label="Switch language">
+                        <span class="lang-en">EN</span>
+                        <span class="lang-divider">|</span>
+                        <span class="lang-es">ES</span>
+                    </button>
+                </div>
+
+                <a href="intake.html" class="btn btn-primary header-cta" id="nav-cta">Get Free Audit</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+        </div>
+    </header>
+
+    <main class="intake-main" style="padding-top:140px;">
+        <section class="form-hero" style="padding-bottom:20px;">
+            <div class="container animate-up" style="text-align:center;">
+                <div class="hero-pill">⚡ Revenue Audit</div>
+                <h1 class="hero-h1">SYSTEM <span class="gradient-text">DIAGNOSTIC</span></h1>
+                <p class="hero-description" style="margin: 0 auto 30px; max-width: 700px;">Identify logical leaks. Plug the revenue holes. Scale with precision.</p>
             </div>
         </section>
+
 
         <section class="diagnostic-form-section">
             <div class="container">
@@ -128,9 +182,53 @@
         </section>
     </main>
 
-    <footer class="footer secondary">
-        <div class="container">
-            <p>&copy; 2024 CHAOTICALLY ORGANIZED. ALL RIGHTS RESERVED.</p>
+    <!-- ======== FOOTER ======== -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <p style="font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 10px;">CHAOTICALLY ORGANIZED AI</p>
+                <p class="footer-tagline">Making Kern County Businesses Unstoppable through AI & Automation.</p>
+                <div class="footer-contact">
+                    <p>📍 1712 19th St #216, Bakersfield, CA 93301</p>
+                    <p>📞 <a href="tel:6616109198">(661) 610-9198</a></p>
+                    <p>✉️ <a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <p class="footer-col-title">Services</p>
+                <ul class="footer-links">
+                    <li><a href="services.html">Website Design</a></li>
+                    <li><a href="services.html">AI Phone Answering</a></li>
+                    <li><a href="services.html">Business Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <p class="footer-col-title">Company</p>
+                <ul class="footer-links">
+                    <li><a href="portfolio.html">Our Work</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-cta-col">
+                <p class="footer-col-title">Get Started</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted2); margin-bottom: 15px;">Free 20-minute consultation. No commitment.</p>
+                <a href="intake.html" class="btn btn-primary pulse-btn" style="width: 100%; text-align: center; border-radius: 8px;">Claim My Audit</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p style="font-size: 0.8rem; color: #444;">© 2026 Chaotically Organized AI. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <span>•</span>
+                <a href="terms-of-service.html">Terms</a>
+                <span>•</span>
+                <a href="sitemap.xml">Sitemap</a>
+            </div>
         </div>
     </footer>
 

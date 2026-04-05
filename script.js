@@ -39,8 +39,10 @@ class NeuralSound {
 
 const AudioUI = new NeuralSound();
 
-// Custom Cursor Initialization
+// // Custom Cursor Initialization
 function initCustomCursor() {
+    if (window.matchMedia("(pointer: coarse)").matches) return; // Skip on touch devices
+
     const dot = document.createElement('div');
     const ring = document.createElement('div');
     dot.className = 'custom-cursor';
@@ -48,18 +50,17 @@ function initCustomCursor() {
     document.body.appendChild(dot);
     document.body.appendChild(ring);
 
-    const thinkingNode = document.createElement('div');
-    thinkingNode.className = 'thinking-node';
-    document.body.appendChild(thinkingNode);
-
     document.addEventListener('mousemove', (e) => {
         dot.style.transform = `translate(${e.clientX - 4}px, ${e.clientY - 4}px)`;
         ring.style.transform = `translate(${e.clientX - 16}px, ${e.clientY - 16}px)`;
     });
 
-    const activeElements = 'a, button, input, select, textarea, .audio-card';
+    const activeElements = 'a, button, input, select, textarea, .glass-card-new, .service-card-new';
     document.querySelectorAll(activeElements).forEach(el => {
-        el.addEventListener('mouseenter', () => document.body.classList.add('cursor-active'));
+        el.addEventListener('mouseenter', () => {
+            document.body.classList.add('cursor-active');
+            if (el.tagName === 'A' || el.tagName === 'BUTTON') AudioUI.tick();
+        });
         el.addEventListener('mouseleave', () => document.body.classList.remove('cursor-active'));
         el.addEventListener('click', () => AudioUI.bloom());
     });
@@ -774,14 +775,112 @@ function showNoFit(message) {
     `;
 }
 
-// Initialize God-Tier Systems
-initCustomCursor();
-
+// Initialize Everything
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal everything after short delay to feel elite
+    initCustomCursor();
+    captureAndStoreAttribution();
+    ensureAnalytics();
+
+    // --- REVEAL ANIMATION ---
     document.body.style.opacity = '0';
     setTimeout(() => {
-        document.body.style.transition = 'opacity 1s';
+        document.body.style.transition = 'opacity 1s cubic-bezier(0.4, 0, 0.2, 1)';
         document.body.style.opacity = '1';
     }, 100);
+
+    // --- HEADER SCROLL EFFECT ---
+    const header = document.getElementById('main-header');
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    }
+
+    // --- MOBILE MENU TOGGLE ---
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener('click', () => {
+            const isOpened = menuToggle.getAttribute('aria-expanded') === 'true';
+            menuToggle.setAttribute('aria-expanded', !isOpened);
+            navLinks.classList.toggle('active');
+            document.body.style.overflow = isOpened ? '' : 'hidden'; // Prevent scroll when menu open
+            AudioUI.tick();
+        });
+
+        // Close menu on link click
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.setAttribute('aria-expanded', 'false');
+                navLinks.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+    }
+
+    // --- ACTIVE PAGE HIGHLIGHT ---
+    const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+
+    // --- SMOOTH SCROLL ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            const target = document.querySelector(targetId);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // --- YEAR UPDATER ---
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 });
+
+// --- LANGUAGE SWITCHER ---
+function toggleLanguage() {
+    const btn = document.getElementById('lang-toggle');
+    if (!btn) return;
+    
+    AudioUI.tick();
+    
+    // Check current state
+    const isEn = btn.classList.contains('is-en');
+    
+    if (isEn) {
+        // Switch to ES
+        btn.classList.replace('is-en', 'is-es');
+        // Logic for translation (Google Translate or manual)
+        if (typeof google === 'object' && google.translate) {
+            const el = document.querySelector('.goog-te-combo');
+            if (el) {
+                el.value = 'es';
+                el.dispatchEvent(new Event('change'));
+            }
+        }
+    } else {
+        // Switch to EN
+        btn.classList.replace('is-es', 'is-en');
+        if (typeof google === 'object' && google.translate) {
+            const el = document.querySelector('.goog-te-combo');
+            if (el) {
+                el.value = 'en';
+                el.dispatchEvent(new Event('change'));
+            }
+        }
+    }
+}

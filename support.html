@@ -31,6 +31,9 @@
         content="Get help with the MCTB app or AI phone system. FAQs, email support, and troubleshooting for trade business automation tools." />
     <meta property="twitter:image" content="https://chaoticallyorganizedai.com/og-image.jpg" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <script src="intro.js" defer></script>
 
     <style>
         /* Floating Call Button */
@@ -275,39 +278,54 @@
             top: 0 !important;
         }
         #google_translate_element {
-            display: none;
+        display: none;
         }
     </style>
 </head>
 
-<body>
+<body class="support-page dark-mode">
+    <!-- FLASH INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-content">
+            <img src="assets/images/intro-logo.png" alt="Chaotically Organized AI Logo" id="intro-logo">
+        </div>
+    </div>
 
-            <header>
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+    <!-- MOVING SPACE BACKGROUND -->
+    <div class="animated-space-bg"></div>
+
+    <div class="neutral-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:-1; pointer-events:none;"></div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <header id="main-header">
+        <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <div class="nav-main">
-                <ul class="nav-links" role="menubar">
-                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="services.html" role="menuitem" tabindex="0">Services</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Case Studies</a></li>
-                    <li><a href="careers.html" role="menuitem" tabindex="0">Careers</a></li>
-                    <li><a href="resources.html" role="menuitem" tabindex="0">Resources</a></li>
-                    <li><a href="contact.html" role="menuitem" tabindex="0">Contact</a></li>
+
+            <nav class="nav-main" role="navigation" aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="services.html" id="nav-services">Services</a></li>
+                    <li><a href="portfolio.html" id="nav-portfolio">Our Work</a></li>
+                    <li><a href="pricing.html" id="nav-pricing">Pricing</a></li>
+                    <li><a href="resources.html" id="nav-resources">Resources</a></li>
+                    <li><a href="contact.html" id="nav-contact">Contact</a></li>
                 </ul>
+
                 <div class="lang-switcher">
-                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                    <button id="lang-toggle" class="btn-lang is-en" onclick="toggleLanguage()" aria-label="Switch language">
                         <span class="lang-en">EN</span>
-                        <span class="lang-divider">/</span>
+                        <span class="lang-divider">|</span>
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
-            </div>
-            <div id="google_translate_element"></div>
-            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+
+                <a href="intake.html" class="btn btn-primary header-cta" id="nav-cta">Get Free Audit</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
         </div>
     </header>
 
@@ -484,27 +502,57 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container" style="text-align: center;">
-            <p>&copy; 2025 Chaotically Organized AI. Serving Bakersfield, Kern County, CA and the United States.</p>
-            <p style="font-size: 0.9rem; color: #888; margin-top: 10px;">Bakersfield | Shafter | Delano | Wasco | Arvin
-                | Tehachapi | Ridgecrest | Kern County | California | Nationwide</p>
-            <p><a href="terms-of-service.html">Terms</a> | <a href="privacy-policy.html">Privacy</a> | <a
-                    href="contact.html">Contact</a> | <a href="https://chaoticallyorganizedai.com/report-abuse">Report
-                    Abuse</a></p>
-            <p style="margin-top: 20px; font-size: 0.85rem; color: #666;">Missed Call Automation | AI Phone Answering
-                for Trades | HVAC | Plumbing | Electrical | Construction</p>
-            <p class="mctb-note">MCTB message drafts require user confirmation before sending and daily limits apply. <a
-                    href="portfolio.html">Recent Work</a> • <a href="privacy-policy.html">Privacy</a> • <a
-                    href="contact.html">Contact</a></p>
+    <!-- ======== FOOTER ======== -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <p style="font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 10px;">CHAOTICALLY ORGANIZED AI</p>
+                <p class="footer-tagline">Making Kern County Businesses Unstoppable through AI & Automation.</p>
+                <div class="footer-contact">
+                    <p>📍 1712 19th St #216, Bakersfield, CA 93301</p>
+                    <p>📞 <a href="tel:6616109198">(661) 610-9198</a></p>
+                    <p>✉️ <a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <p class="footer-col-title">Services</p>
+                <ul class="footer-links">
+                    <li><a href="services.html">Website Design</a></li>
+                    <li><a href="services.html">AI Phone Answering</a></li>
+                    <li><a href="services.html">Business Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <p class="footer-col-title">Company</p>
+                <ul class="footer-links">
+                    <li><a href="portfolio.html">Our Work</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-cta-col">
+                <p class="footer-col-title">Get Started</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted2); margin-bottom: 15px;">Free 20-minute consultation. No commitment.</p>
+                <a href="intake.html" class="btn btn-primary pulse-btn" style="width: 100%; text-align: center; border-radius: 8px;">Claim My Audit</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p style="font-size: 0.8rem; color: #444;">© 2026 Chaotically Organized AI. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <span>•</span>
+                <a href="terms-of-service.html">Terms</a>
+                <span>•</span>
+                <a href="sitemap.xml">Sitemap</a>
+            </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-
-    <a href="tel:6616109198" class="floating-call" aria-label="Call now">📞</a>
-
-<script src="script.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

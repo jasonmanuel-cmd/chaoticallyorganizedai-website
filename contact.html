@@ -57,6 +57,9 @@
         }
         </script>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="home-styles.css">
+    <link rel="stylesheet" href="intro.css">
+    <script src="intro.js" defer></script>
 
     <style>
         @media screen and (max-width: 768px) {
@@ -300,41 +303,60 @@
     </style>
 </head>
 <body class="contact-page dark-mode">
-    <div class="neural-pulse-bg">
-        <div class="neural-grid"></div>
+    <!-- FLASH INTRO OVERLAY -->
+    <div id="intro-overlay">
+        <canvas id="intro-canvas"></canvas>
+        <div class="intro-content">
+            <img src="assets/images/intro-logo.png" alt="Chaotically Organized AI Logo" id="intro-logo">
+        </div>
     </div>
 
-            <header>
-        <div class="nav-container" role="navigation" aria-label="Main Navigation">
+    <!-- MOVING SPACE BACKGROUND -->
+    <div class="animated-space-bg"></div>
+
+    <div class="neutral-overlay" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:-1; pointer-events:none;"></div>
+
+    <!-- ======== NAVIGATION ======== -->
+    <header id="main-header">
+        <div class="nav-container">
             <a href="index.html" class="logo">
                 <img src="logo.png" alt="Chaotically Organized AI logo" loading="lazy" width="48" height="48">
                 <span class="logo-text">CHAOTICALLY ORGANIZED AI</span>
             </a>
-            <div class="nav-main">
-                <ul class="nav-links" role="menubar">
-                    <li><a href="index.html" role="menuitem" tabindex="0">Home</a></li>
-                    <li><a href="portfolio.html" role="menuitem" tabindex="0">Proof</a></li>
-                    <li><a href="contact.html" class="active" role="menuitem" tabindex="0">Contact</a></li>
+
+            <nav class="nav-main" role="navigation" aria-label="Main navigation">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="services.html" id="nav-services">Services</a></li>
+                    <li><a href="portfolio.html" id="nav-portfolio">Our Work</a></li>
+                    <li><a href="pricing.html" id="nav-pricing">Pricing</a></li>
+                    <li><a href="resources.html" id="nav-resources">Resources</a></li>
+                    <li><a href="contact.html" id="nav-contact" class="active">Contact</a></li>
                 </ul>
+
                 <div class="lang-switcher">
-                    <button id="lang-toggle" class="btn-lang" onclick="toggleLanguage()" aria-label="Switch Language">
+                    <button id="lang-toggle" class="btn-lang is-en" onclick="toggleLanguage()" aria-label="Switch language">
                         <span class="lang-en">EN</span>
-                        <span class="lang-divider">/</span>
+                        <span class="lang-divider">|</span>
                         <span class="lang-es">ES</span>
                     </button>
                 </div>
-                <a href="index.html#audit-form" class="btn btn-primary header-cta" tabindex="0">Face My Revenue Loss</a>
-            </div>
-            <div id="google_translate_element"></div>
-            <button class="menu-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="main-menu">☰</button>
+
+                <a href="intake.html" class="btn btn-primary header-cta" id="nav-cta">Get Free Audit</a>
+            </nav>
+
+            <button class="menu-toggle" id="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
         </div>
     </header>
 
-    <section class="section">
-        <div class="container">
-            <h1>Book Your Systems & Website Audit</h1>
-            <p style="font-size: 1.1rem; margin-bottom: 50px;">Talk to us about a custom website, conversion funnel,
-                backend automation, or AI phone answering for your service business in Bakersfield and Kern County.</p>
+    <section class="section" style="padding-top:180px; text-align: center;">
+        <div class="container animate-up">
+            <div class="hero-pill">📍 Based in Bakersfield, CA</div>
+            <h1 class="hero-h1">Book Your Systems &<br><span class="gradient-text">Website Audit</span></h1>
+            <p class="hero-description" style="margin: 0 auto 40px; max-width: 800px;">
+                Talk to us about a custom website, conversion funnel, backend automation, or AI phone answering for your service business.
+            </p>
+        </div>
+    </section>
 
             <div class="two-column-grid">
                 <div class="contact-option">
@@ -421,31 +443,60 @@
         </div>
     </section>
 
-    <footer>
-        <div class="container" style="text-align: center;">
-            <p style="font-weight: 700; color: var(--crimson-core); margin-bottom: 15px; letter-spacing: 1px;">
-                CHAOTICALLY ORGANIZED AI
-            </p>
-            <p style="color: var(--text-muted); line-height: 1.8; margin-bottom: 20px;">
-                <span style="display: block;">📍 1712 19th St #216, Bakersfield, CA 93301</span>
-                <span style="display: block;">📞 Office: <a href="tel:6616109198"
-                        style="color: var(--text-muted); text-decoration: none;">(661) 610-9198</a></span>
-                <span style="display: block;">✉️ <a href="mailto:chaoticallyorganizedai@gmail.com"
-                        style="color: var(--text-muted);">chaoticallyorganizedai@gmail.com</a></span>
-            </p>
-            <p style="font-size: 0.9rem; color: #666;">
-                Serving service businesses and local brands in Bakersfield, Kern County, and surrounding cities.
-            </p>
-            <p style="margin-top: 15px;">
-                <a href="terms-of-service.html">Terms</a> |
-                <a href="privacy-policy.html">Privacy</a> |
-                <a href="contact.html">Contact</a>
-            </p>
-            <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.6;">
-                &copy; <span id="year"></span> Chaotically Organized AI. Proudly built in Bakersfield, CA.
-            </p>
+    <!-- ======== FOOTER ======== -->
+    <footer id="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <p style="font-weight: 800; font-size: 1.2rem; color: #fff; margin-bottom: 10px;">CHAOTICALLY ORGANIZED AI</p>
+                <p class="footer-tagline">Making Kern County Businesses Unstoppable through AI & Automation.</p>
+                <div class="footer-contact">
+                    <p>📍 1712 19th St #216, Bakersfield, CA 93301</p>
+                    <p>📞 <a href="tel:6616109198">(661) 610-9198</a></p>
+                    <p>✉️ <a href="mailto:chaoticallyorganizedai@gmail.com">chaoticallyorganizedai@gmail.com</a></p>
+                </div>
+            </div>
+            
+            <div class="footer-nav">
+                <p class="footer-col-title">Services</p>
+                <ul class="footer-links">
+                    <li><a href="services.html">Website Design</a></li>
+                    <li><a href="services.html">AI Phone Answering</a></li>
+                    <li><a href="services.html">Business Automation</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-nav">
+                <p class="footer-col-title">Company</p>
+                <ul class="footer-links">
+                    <li><a href="portfolio.html">Our Work</a></li>
+                    <li><a href="resources.html">Resources</a></li>
+                    <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-cta-col">
+                <p class="footer-col-title">Get Started</p>
+                <p style="font-size: 0.85rem; color: var(--text-muted2); margin-bottom: 15px;">Free 20-minute consultation. No commitment.</p>
+                <a href="intake.html" class="btn btn-primary pulse-btn" style="width: 100%; text-align: center; border-radius: 8px;">Claim My Audit</a>
+            </div>
+        </div>
+
+        <div class="container footer-bottom">
+            <p style="font-size: 0.8rem; color: #444;">© 2026 Chaotically Organized AI. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="privacy-policy.html">Privacy</a>
+                <span>•</span>
+                <a href="terms-of-service.html">Terms</a>
+                <span>•</span>
+                <a href="sitemap.xml">Sitemap</a>
+            </div>
         </div>
     </footer>
+
+    <a href="tel:6616109198" class="floating-call pulse-btn" style="background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));">📞</a>
+
+    <script src="script.js" defer></script>
+</body>
 
     <script>
         // Menu Toggle
