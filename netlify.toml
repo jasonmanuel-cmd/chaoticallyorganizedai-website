@@ -3,7 +3,8 @@
 
 [build]
   publish = "."
-  command = ""
+  # Runs package.json "build" script (no-op echo). Keeps Netlify happy if it expects a build step.
+  command = "npm run build"
 
 # SECURITY + PERFORMANCE HEADERS
 [[headers]]
