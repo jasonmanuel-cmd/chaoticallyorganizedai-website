@@ -408,15 +408,7 @@ function nextStep(step) {
 
     if (!valid) return;
 
-    // Logic: Filter out "1 truck" and "0 missed calls" (Step 1 & 2 check)
-    if (currentStep === 1) {
-        const trucks = document.getElementById('truckCount').value;
-        if (trucks === '1') {
-            showNoFit('It looks like you\'re just getting started. Our systems are currently optimized for fleets of 2+ trucks. Keep growing and check back soon!');
-            return;
-        }
-    }
-
+    // 1-person businesses are fully supported.
     if (currentStep === 2) {
         const bottleneck = document.getElementById('bottleneck').value;
         if (bottleneck === 'none') {
@@ -464,12 +456,30 @@ function showNoFit(message) {
     `;
 }
 
+function enforceGlobalBrandConsistency() {
+    const canonicalEmail = 'KIO2Organized@gmail.com';
+
+    // Keep all contact links and visible email text consistent site-wide.
+    document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+        link.setAttribute('href', `mailto:${canonicalEmail}`);
+        if (link.textContent && link.textContent.includes('@')) {
+            link.textContent = canonicalEmail;
+        }
+    });
+
+    // Keep top nav and footer intake CTAs consistent across pages.
+    document.querySelectorAll('a[href="intake.html"]').forEach((link) => {
+        const text = (link.textContent || '').trim().toLowerCase();
+        if (text.includes('free growth audit') || text.includes('claim my growth audit')) {
+            link.textContent = 'Run My Growth Diagnostic';
+        }
+    });
+}
+
 // --- LANGUAGE SWITCHER ---
 function toggleLanguage() {
     const btn = document.getElementById('lang-toggle');
     if (!btn) return;
-
-    AudioUI.tick();
 
     const isEn = btn.classList.contains('is-en');
 
@@ -514,6 +524,7 @@ function ensureJaxNavLink() {
 
 // Initialize Everything
 document.addEventListener('DOMContentLoaded', () => {
+    enforceGlobalBrandConsistency();
     syncLanguageToggleState();
     ensureJaxNavLink();
     markActiveNav();

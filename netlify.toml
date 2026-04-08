@@ -93,23 +93,13 @@
   to = "/support.html"
   status = 301
 
-# Custom 404 Catch-all
-[[redirects]]
-  from = "/*"
-  to = "/404.html"
-  status = 404
+# Custom 404: Do NOT use /* -> /404.html here. Netlify serves /404.html automatically for
+# unknown paths when the file exists in publish. A catch-all 404 redirect can break the
+# homepage and all routes on some deploys. See: https://docs.netlify.com/routing/redirects/redirect-options/
 
 # FORMS - Native Netlify Form Handling
 [forms]
   filter = true
 
-# PLUGINS - Post-deploy Audits
-[[plugins]]
-  package = "@netlify/plugin-lighthouse"
-  
-  [plugins.inputs.audits]
-    performance = true
-    accessibility = true
-    best-practices = true
-    seo = true
-    pwa = true
+# Lighthouse plugin removed: static repo has no package.json; plugin can fail CI/deploy.
+# Re-add after `npm init` + `npm i -D @netlify/plugin-lighthouse` if you want audits.

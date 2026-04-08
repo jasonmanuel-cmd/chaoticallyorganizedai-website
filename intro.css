@@ -89,11 +89,14 @@
     background:
         linear-gradient(90deg, rgba(24, 208, 154, 0.1) 1px, transparent 1px),
         linear-gradient(0deg, rgba(24, 208, 154, 0.08) 1px, transparent 1px),
-        radial-gradient(circle at 65% 35%, rgba(98, 245, 210, 0.16), transparent 40%);
-    background-size: 72px 72px, 72px 72px, auto;
+        radial-gradient(circle at 65% 35%, rgba(98, 245, 210, 0.16), transparent 40%),
+        radial-gradient(circle, rgba(226, 255, 247, 0.86) 0 1px, transparent 1.5px),
+        radial-gradient(circle, rgba(156, 236, 217, 0.65) 0 1px, transparent 1.5px);
+    background-size: 72px 72px, 72px 72px, auto, 160px 160px, 220px 220px;
+    background-position: 0 0, 0 0, center, 0 0, 40px 70px;
     mix-blend-mode: screen;
     opacity: 0.46;
-    animation: circuitPulse 8s ease-in-out infinite;
+    animation: circuitPulse 8s ease-in-out infinite, starDrift 90s linear infinite;
 }
 
 .animated-space-bg::after {
@@ -116,6 +119,11 @@
 @keyframes circuitPulse {
     0%, 100% { opacity: 0.35; }
     50% { opacity: 0.68; }
+}
+
+@keyframes starDrift {
+    0% { background-position: 0 0, 0 0, center, 0 0, 40px 70px; }
+    100% { background-position: 64px 32px, 24px 56px, center, 260px 180px, 120px 320px; }
 }
 
 @keyframes shipDrift {

@@ -83,5 +83,5 @@ https://www.chaoticallyorganizedai.com/*  https://chaoticallyorganizedai.com/:sp
 /free     /index.html#audit-form   301!
 /land.html /index.html#audit-form 301!
 
-# CUSTOM 404 FALLBACK
-/*    /404.html    404
+# Do not add /* -> /404.html here. Netlify auto-serves 404.html for missing paths.
+# A global /* 404 rule can break the live site (homepage shows Netlify 404).
